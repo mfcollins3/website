@@ -6,5 +6,6 @@
             "extended": true,
             "version": "0.123.8"
         }
-    }
+    },
+    "forwardPorts": [1313]
 }
