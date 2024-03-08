@@ -1,0 +1,10 @@
+{
+    "name": "Website",
+    "image": "mcr.microsoft.com/devcontainers/base:1.0.9-bookworm",
+    "features": {
+        "ghcr.io/devcontainers/features/hugo:1": {
+            "extended": true,
+            "version": "0.123.8"
+        }
+    }
+}
