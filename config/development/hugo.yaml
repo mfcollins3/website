@@ -4,7 +4,7 @@
 # under CC BY 4.0. To view a copy of this license, visit 
 # http://creativecommons.org/licenses/by/4.0/
 
-baseURL: https://localhost:1313
+baseURL: http://localhost:4280
 buildDrafts: true
 buildExpired: false
 buildFuture: true

@@ -5,7 +5,21 @@
         "ghcr.io/devcontainers/features/hugo:1": {
             "extended": true,
             "version": "0.123.8"
+        },
+        "ghcr.io/devcontainers/features/node:1": {
+            "version": "20.11.1"
         }
     },
-    "forwardPorts": [1313]
+    "forwardPorts": [
+        1313,
+        4280
+    ],
+    "postCreateCommand": ". ${NVM_DIR}/nvm.sh && npm ci",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "codezombiech.gitignore"
+            ]
+        }
+    }
 }

@@ -1,0 +1,43 @@
+{
+    "name": "@mfcollins3/website",
+    "type": "module",
+    "version": "1.0.0",
+    "description": "Personal website for Michael Collins where I publish information on personal and professional topics of interest",
+    "keywords": [
+        "azure",
+        "blog",
+        "coding",
+        "development",
+        "engineering",
+        "hugo",
+        "personal",
+        "professional",
+        "software",
+        "website",
+        "vlog"
+    ],
+    "homepage": "https://www.michaelcollins.blog",
+    "bugs": {
+        "email": "mfcollins3@me.com",
+        "url": "https://github.com/mfcollins3/website/issues"
+    },
+    "license": "CC-BY-4.0",
+    "contributors": [
+        {
+            "name": "Michael Collins",
+            "email": "mfcollins3@me.com",
+            "url": "https://www.michaelcollins.blog"
+        }
+    ],
+    "repository": "github:mfcollins3/website",
+    "scripts": {
+        "start": "swa start"
+    },
+    "devDependencies": {
+        "@azure/static-web-apps-cli": "^1.1.7"
+    },
+    "engines": {
+        "node": "20.11.1"
+    },
+    "private": true
+}
