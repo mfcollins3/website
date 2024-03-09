@@ -1,2 +1,10 @@
-<h1>{{ site.Title }}</h1>
-{{ partial "menu.html" (dict "menuID" "main" "page" .) }}
+<nav>
+    <div>
+        <h1 class="logo"><a href="/">{{ site.Title }}</a></h1>
+        {{ partial "menu.html" (dict "menuID" "main" "page" .) }}
+    </div>
+</nav>
+<div>
+    <h1>Welcome to my website!</h1>
+    <p>My name is Michael and this is my personal space. I am a professional software developer with three decades of professional software development experience in both product development and technical consulting.Here will you find out all about me, my passions, my interests, projects that I am working on, and articles and videos on professional and personal topics of interest. Please look around and feel free to reach out to me if you have shared interests or are interested in collaborating with me.</p>
+</div>
