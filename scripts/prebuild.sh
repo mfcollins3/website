@@ -10,4 +10,5 @@ gem install bundler
 bundle install
 
 ASCIIDOCTOR_PATH=$(bundle info --path asciidoctor)
+echo "ASCIIDOCTOR_PATH = $ASCIIDOCTOR_PATH"
 export PATH=$ASCIIDOCTOR_PATH/bin:$PATH
