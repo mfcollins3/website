@@ -34,7 +34,6 @@
         "start": "swa start"
     },
     "devDependencies": {
-        "@azure/static-web-apps-cli": "^1.1.7"
     },
     "engines": {
         "node": "20.11.1"

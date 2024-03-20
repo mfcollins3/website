@@ -9,6 +9,11 @@ defaultContentLanguage: en
 enableEmoji: true
 enableRobotsTXT: true
 languageCode: en-US
+markup:
+  asciidocExt:
+    extensions:
+      - asciidoctor-diagram
+      - asciidoctor-html5s
 menus:
   main:
     - name: Home
@@ -27,6 +32,30 @@ menus:
       pageRef: /recipes
       weight: 50
 newContentEditor: code
+permalinks:
+  page:
+    blog: /blog/:year/:month/:slug/
+security:
+  enableInlineShortcodes: false
+  exec:
+    allow:
+      - ^(dart-)?sass(-embedded)?$
+      - ^go$
+      - ^npx$
+      - ^postcss$
+      - ^asciidoctor$
+    osEnv:
+      - (?i)^((HTTPS?|NO)_PROXY|PATH(EXT)?|APPDATA|TE?MP|TERM|GEM_PATH|GO\w+|(XDG_CONFIG_)?HOME|USERPROFILE|SSH_AUTH_SOCK|DISPLAY|LANG|SYSTEMDRIVE)$
+  funcs:
+    getenv:
+      - ^HUGO_
+      - ^CI$
+  http:
+    mediaTypes: null
+    methods:
+      - (?i)GET|POST
+    urls:
+      - .*
 theme: normal
 timeZone: America/Phoenix
 title: Michael F. Collins, III

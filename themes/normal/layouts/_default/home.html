@@ -1,7 +1,17 @@
 {{ define "main" }}
-  {{ .Content }}
-  {{ range site.RegularPages }}
-    <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
-    {{ .Summary }}
+  {{ range where site.RegularPages.ByPublishDate.Reverse "Section" "blog" | first 1 }}
+    <section id="latest-blog-post">
+      {{ $coverName := .Params.cover }}
+      {{ $coverPhoto := .Resources.Get $coverName }}
+      {{ with $coverPhoto.Fill "672x388 Center" }}
+        <img src="{{ .RelPermalink }}" alt="{{ .Title }}">
+      {{ end }}
+      <div>
+        <h1><a href="{{ .RelPermalink }}">{{ .Title }}</a></h1>
+        <p class="publish-date"><time datetime="{{ .PublishDate.Format "2006-01-03T15:04:05Z0700" }}">{{ .PublishDate.Format "January 2, 2006" }}</time></p>
+        {{ .Summary }}
+        <p class="read-more"><a href="{{ .RelPermalink }}">Read more</a></p>
+        </div>
+    </section>
   {{ end }}
 {{ end }}

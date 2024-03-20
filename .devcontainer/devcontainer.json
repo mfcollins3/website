@@ -8,17 +8,23 @@
         },
         "ghcr.io/devcontainers/features/node:1": {
             "version": "20.11.1"
+        },
+        "ghcr.io/devcontainers/features/ruby:1": {
+            "version": "3.1.4"
         }
     },
     "forwardPorts": [
         1313,
         4280
     ],
-    "postCreateCommand": ". ${NVM_DIR}/nvm.sh && npm ci",
+    "postCreateCommand": "./install.sh",
     "customizations": {
         "vscode": {
             "extensions": [
-                "codezombiech.gitignore"
+                "codezombiech.gitignore",
+                "ms-azuretools.vscode-azurestaticwebapps",
+                "ms-azuretools.vscode-azurefunctions",
+                "ms-edgedevtools.vscode-edge-devtools"
             ]
         }
     }

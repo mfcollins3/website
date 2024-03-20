@@ -1,0 +1,13 @@
+{
+    "configurations": [
+        {
+            "name": "SWA: Run website (swa-cli.config.json)",
+            "request": "launch",
+            "type": "msedge",
+            "url": "http://localhost:4280",
+            "preLaunchTask": "swa: start website",
+            "webRoot": "${workspaceFolder}/.",
+            "timeout": 30000
+        }
+    ]
+}
