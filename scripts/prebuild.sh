@@ -11,4 +11,6 @@ bundle install
 
 ASCIIDOCTOR_PATH=$(bundle info --path asciidoctor)
 echo "ASCIIDOCTOR_PATH = $ASCIIDOCTOR_PATH"
+ls $ASCIIDOCTOR_PATH
+ls $ASCIIDOCTOR_PATH/bin
 export PATH=$ASCIIDOCTOR_PATH/bin:$PATH
