@@ -8,3 +8,6 @@
 
 gem install bundler
 bundle install
+
+ASCIIDOCTOR_PATH=$(bundle info --path asciidoctor)
+export PATH=$ASCIIDOCTOR_PATH/bin:$PATH
