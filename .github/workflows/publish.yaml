@@ -40,8 +40,6 @@ jobs:
         with:
           ruby-version: ${{ env.RUBY_VERSION}}
           bundler-cache: true
-      - name: Install Ruby tools
-        run: bundle install
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
@@ -52,6 +50,8 @@ jobs:
           ASCIIDOCTOR_PATH=$(bundle info --path asciidoctor)
           export PATH=$ASCIIDOCTOR_PATH/bin:$PATH
           npx swa build
+        env:
+          GEM_PATH: ./vendor/bundle
       - name: Publish the preview website
         if: ${{ github.event_name == 'pull_request' }}
         run: npx swa deploy --env preview
