@@ -47,13 +47,10 @@ jobs:
           extended: true
       - name: Build the website
         run: |
-          ASCIIDOCTOR_PATH=$(bundle info --path asciidoctor)
-          export PATH=$ASCIIDOCTOR_PATH/bin:$PATH
-          echo "GEM_PATH=$GEM_PATH"
-          ls -R $GEM_PATH/ruby
+          export PATH=$GEM_PATH/bin:$PATH
           npx swa build
         env:
-          GEM_PATH: ${{ github.workspace }}/vendor/bundle
+          GEM_PATH: ${{ github.workspace }}/vendor/bundle/ruby/3.1.0
       - name: Publish the preview website
         if: ${{ github.event_name == 'pull_request' }}
         run: npx swa deploy --env preview
