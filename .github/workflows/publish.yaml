@@ -50,6 +50,7 @@ jobs:
           ASCIIDOCTOR_PATH=$(bundle info --path asciidoctor)
           export PATH=$ASCIIDOCTOR_PATH/bin:$PATH
           echo "GEM_PATH=$GEM_PATH"
+          ls $GEM_PATH
           npx swa build
         env:
           GEM_PATH: ${{ github.workspace }}/vendor/bundle
