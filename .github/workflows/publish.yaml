@@ -49,9 +49,8 @@ jobs:
         run: |
           ASCIIDOCTOR_PATH=$(bundle info --path asciidoctor)
           export PATH=$ASCIIDOCTOR_PATH/bin:$PATH
+          echo "GEM_PATH=$GEM_PATH"
           npx swa build
-        env:
-          GEM_PATH: ./vendor/bundle
       - name: Publish the preview website
         if: ${{ github.event_name == 'pull_request' }}
         run: npx swa deploy --env preview
