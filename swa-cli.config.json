@@ -4,7 +4,7 @@
     "website": {
       "appLocation": ".",
       "outputLocation": "public",
-      "appBuildCommand": "hugo",
+      "appBuildCommand": "hugo --minify --environment production",
       "run": "hugo server",
       "appDevserverUrl": "http://localhost:1313"
     }
