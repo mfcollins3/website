@@ -241,12 +241,14 @@ main {
   }
 
   nav {
-    > div {
-      justify-content: flex-end !important;
-    }
+    background-color: #033f57 !important;
 
-    .logo {
-      display: none;
+    > div {
+      .logo {
+        margin-left: 8px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+      }
     }
   }
 
