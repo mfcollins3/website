@@ -52,7 +52,7 @@ jobs:
           echo "GEM_PATH=$GEM_PATH"
           npx swa build
         env:
-          GEM_PATH: ./vendor/bundle
+          GEM_PATH: ${{ github.workspace }}/vendor/bundle
       - name: Publish the preview website
         if: ${{ github.event_name == 'pull_request' }}
         run: npx swa deploy --env preview
