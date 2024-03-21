@@ -40,6 +40,8 @@ jobs:
         with:
           ruby-version: ${{ env.RUBY_VERSION}}
           bundler-cache: true
+      - name: Install Ruby tools
+        run: bundle install
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
