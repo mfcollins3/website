@@ -46,7 +46,10 @@ jobs:
           hugo-version: ${{ env.HUGO_VERSION}}
           extended: true
       - name: Build the website
-        run: npx swa build
+        run: |
+          ASCIIDOCTOR_PATH=$(bundle info --path asciidoctor)
+          export PATH=$ASCIIDOCTOR_PATH/bin:$PATH
+          npx swa build
       - name: Publish the preview website
         if: ${{ github.event_name == 'pull_request' }}
         run: npx swa deploy --env preview
