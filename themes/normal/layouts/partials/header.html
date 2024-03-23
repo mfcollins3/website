@@ -1,16 +1,1 @@
-<nav>
-    <div>
-        <h1 class="logo"><a href="/">{{ site.Title }}</a></h1>
-
-        <input type="checkbox" id="menu-toggle">
-        <label for="menu-toggle" class="icons">
-            <i class="bx bx-menu" id="menu-icon"></i>
-            <i class="bx bx-x" id="close-icon"></i>
-        </label>
-
-        {{ partial "menu.html" (dict "menuID" "main" "page" .) }}
-    </div>
-</nav>
-<div>
-    {{ .Content }}
-</div>
+{{ partial "navbar.html" }}
