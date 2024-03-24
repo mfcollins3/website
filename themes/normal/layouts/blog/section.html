@@ -1,0 +1,17 @@
+{{ define "main" }}
+  {{ .Content }}
+  <div class="container">
+    <section class="posts">
+      {{ range .RegularPagesRecursive.ByPublishDate.Reverse }}
+        {{ partial "blog_post_summary.html" .}}
+      {{ end }}
+    </section>
+    <section class="sections">
+      <ul>
+        {{ range .Sections.ByDate.Reverse }}
+          <li><a href="{{ .RelPermalink }}">{{- .Title -}}</a> ({{- .RegularPagesRecursive.Len -}})</li>
+        {{ end }}
+      </ul>
+    </section>
+  </div>
+{{ end }}

@@ -1,0 +1,13 @@
+<div class="blog-post-summary">
+    {{ $coverName := .Params.cover }}
+    {{ $coverPhoto := .Resources.Get $coverName }}
+    {{ with $coverPhoto.Fill "300x168 Center" }}
+    <img src="{{ .RelPermalink }}" alt="{{ .Title }}">
+    {{ end }}
+    <div>
+    <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+    <p class="publish-date"><time datetime="{{ .PublishDate.Format "2006-01-03T15:04:05Z0700" }}">{{ .PublishDate.Format "January 2, 2006" }}</time></p>
+    {{ .Summary }}
+    <p class="read-more"><a href="{{ .RelPermalink }}">Read more</a></p>
+    </div>
+</div>

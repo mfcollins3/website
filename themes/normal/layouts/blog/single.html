@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="{{ or site.Language.LanguageCode site.Language.Lang }}" dir="{{ or site.Language.LanguageDirection `ltr` }}">
+<head>
+  {{ partial "head.html" . }}
+</head>
+<body class="{{ .Section }}">
+  <header>
+    {{ partial "header.html" . }}
+    {{ if .Params.cover }}
+      {{ $cover := .Resources.GetMatch (.Params.cover) }}
+      {{ with $cover.Process "Fill 1440x600 Center" }}
+        <img class="cover" src="{{ .RelPermalink }}" alt="{{ .Title }}">
+      {{ end }}
+    {{ end }}
+  </header>
+  <main>
+    <article class="post">
+      <h1>{{ .Title }}</h1>
+
+      {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
+      {{ $dateHuman := .Date | time.Format ":date_long" }}
+      <time class="publish-time" datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>
+
+      {{ .Content }}
+
+      {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
+    </article>
+  </main>
+  <footer>
+    {{ partial "footer.html" . }}
+  </footer>
+</body>
+</html>

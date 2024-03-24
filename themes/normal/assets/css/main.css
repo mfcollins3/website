@@ -126,6 +126,7 @@ header {
 
 main {
   max-width: 1440px;
+  width: 100%;
   margin: 32px 0;
   color: #01090d;
 
@@ -341,6 +342,92 @@ main section.timeline {
   }
 }
 
+main section.posts, main section.years {
+  border: none;
+  box-shadow: none;
+  margin: 32px 0;
+}
+
+body.blog main div.container {
+  display: flex;
+  column-gap: 32px;
+  flex-wrap: wrap;
+  margin: 32px 0;
+
+  .posts {
+    flex: 1 1 320px;
+  }
+
+  .sections {
+    flex: 0 0 200px;
+    border: none;
+    box-shadow: none;
+    border-left: 1px solid #0a90c7;
+    border-radius: 0;
+    padding-left: 32px;
+
+    ul {
+      li {
+        list-style: none;
+      }
+    }
+  }
+}
+
+.blog-post-summary {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 32px;
+  padding-right: 32px;
+  border-bottom: 1px solid #cbd2d5;
+
+  img {
+    object-fit: cover;
+    width: 100%;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  > div {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+
+    h2 {
+      font-family: 'Lora', serif;
+      font-size: 24px;
+      font-weight: 400;
+      margin-left: -2px;
+
+      a, a:visited {
+        color: #01090d;
+      }
+    }
+
+    .publish-date {
+      font-size: 12px;
+      margin-top: 5px;
+      margin-bottom: 11px;
+    }
+
+    .paragraph p {
+      text-overflow: ellipsis;
+    }
+
+    .read-more {
+      margin-top: 12px;
+      margin-bottom: 32px;
+      margin-left: -1px;
+    }
+  }
+}
+
+.blog-post-summary:last-child {
+  border-bottom: none;
+}
+
 @media (max-width: 975px) {
   header > nav > div {
     ul {
@@ -402,6 +489,41 @@ main section.timeline {
         transition-delay: calc(0.15s * var(--i));
       }
     }
+  }
+}
+
+article.post {
+  h1 {
+    font-size: 3rem;
+  }
+
+  time.publish-time {
+    font-size: 0.8rem;
+    margin: 1rem 0;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+  }
+
+  h4 {
+    font-size: 1.2rem;
+  }
+
+  h5 {
+    font-size: 1rem;
+  }
+
+  h6 {
+    font-size: 0.8rem;
+  }
+  
+  p {
+    margin: 1rem 0;
   }
 }
 
