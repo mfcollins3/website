@@ -428,6 +428,48 @@ body.blog main div.container {
   border-bottom: none;
 }
 
+body > footer {
+  max-width: 1440px;
+  width: 100%;
+  margin: 32px 0;
+  padding-top: 32px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  column-gap: 32px;
+  border-top: 1px solid #cbd2d5;
+
+  .copyright, .legal, .contact {
+    flex: 1 1 320px;
+  }
+
+  .copyright {
+    p {
+      margin-bottom: 1rem;
+    }
+  }
+  
+  .legal {
+    ul {
+      list-style: none;
+    }
+  }
+
+  .contact {
+    p {
+      font-weight: 500;
+    }
+
+    ul {
+      list-style: none;
+
+      li i {
+        margin-right: 8px;
+      }
+    }
+  }
+}
+
 @media (max-width: 975px) {
   header > nav > div {
     ul {
@@ -521,7 +563,7 @@ article.post {
   h6 {
     font-size: 0.8rem;
   }
-  
+
   p {
     margin: 1rem 0;
   }
