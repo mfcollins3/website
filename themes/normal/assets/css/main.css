@@ -136,7 +136,7 @@ main {
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   }
 
-  #latest-blog-post {
+  #featured-blog-post {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 32px;
@@ -184,6 +184,10 @@ main {
         margin-left: -1px;
       }
     }
+  }
+
+  #latest-blog-posts {
+    margin-top: 32px;
   }
 }
 
@@ -380,6 +384,7 @@ body.blog main div.container {
   gap: 32px;
   padding-right: 32px;
   border-bottom: 1px solid #cbd2d5;
+  margin-top: 32px;
 
   img {
     object-fit: cover;
@@ -570,6 +575,12 @@ article.post {
   }
 }
 
+p.cover-attribution {
+  background-color: white;
+  color: #01090d;
+  font-size: 0.75rem;
+}
+
 @media (max-width: 500px) {
   header > div {
     display: none;
@@ -590,7 +601,7 @@ article.post {
   }
 
   main {
-    #latest-blog-post {
+    #featured-blog-post {
       display: flex;
 
       img {

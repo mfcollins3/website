@@ -3,6 +3,7 @@ title: My Ice Breaker
 date: 2024-03-24T12:20:00-0700
 summary: Welcome to my blog! I am happy to have you hear. This post is an introduction to you about me. You will learn all about my background, what my hobbies and passions are, where I work now and have worked in the past, and a preview of what is to come with this website.
 cover: cover.jpg
+coverAttribution: Photo by <a href="https://unsplash.com/@joshuaearle?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Joshua Earle</a> on <a href="https://unsplash.com/photos/man-floating-on-water-photo-edit-xEh4hvxRKXM?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
 ---
 Welcome to my latest web endeavor! Building and maintaining a personal website and blog has been a long-time challenge. I have used various tools over the years to build and maintain a blog. Sometimes the blogs have failed because I got tired of writing or got busy and couldn't find the time to come back to write more. Often, I started off with a pre-built template but became frustrated because the template wouldn't do what I really wanted to do and I felt it wasn't letting me express myself the way that I wanted. But this time, I'm very excited about the new website and optimistic for the future of it.
 

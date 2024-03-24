@@ -1,8 +1,9 @@
 <div class="blog-post-summary">
+    {{ $page := .}}
     {{ $coverName := .Params.cover }}
     {{ $coverPhoto := .Resources.Get $coverName }}
     {{ with $coverPhoto.Fill "300x168 Center" }}
-    <img src="{{ .RelPermalink }}" alt="{{ .Title }}">
+    <a href="{{ $page.RelPermalink }}"><img src="{{ .RelPermalink }}" alt="{{ .Title }}"></a>
     {{ end }}
     <div>
     <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>

@@ -36,6 +36,9 @@
         <img class="cover" src="{{ .RelPermalink }}" alt="{{ .Title }}">
       {{ end }}
     {{ end }}
+    {{ if .Params.coverAttribution }}
+      <p class="cover-attribution">{{ safe.HTML .Params.coverAttribution }}</p>
+    {{ end }}
   </header>
   <main>
     <article class="post">
@@ -48,9 +51,8 @@
   
         {{ if ne .Lastmod .Date }}
           {{ $lastmodMachine := .Lastmod | time.Format "2006-01-02T15:04:05-07:00" }}
-          {{ $lastmodDateHuman := .Lastmod | time.Format ":date_long" }}
-          {{ $lastmodTimeHuman := .Lastmod | time.Format ":time_long" }}
-          (Updated: <time datetime="{{ $lastmodMachine }}">{{ $lastmodDateHuman }} {{ $lastmodTimeHuman }}</time>)
+          {{ $lastmodDateHuman := .Lastmod.Local.Format "January 2, 2006 3:04:05 PM -07:00" }}
+          (Updated: <time datetime="{{ $lastmodMachine }}">{{ $lastmodDateHuman }}</time>)
         {{ end }}
       </div>
 

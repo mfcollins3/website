@@ -2,7 +2,7 @@
   {{ .Content }}
   <div class="container">
     <section class="posts">
-      {{ range .RegularPagesRecursive.ByPublishDate.Reverse }}
+      {{ range .RegularPagesRecursive.ByPublishDate }}
         {{ partial "blog_post_summary.html" .}}
       {{ end }}
     </section>
