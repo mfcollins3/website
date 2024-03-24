@@ -1,6 +1,29 @@
 ---
 title: My Ice Breaker
-date: 2024-03-24T12:00:00-0700
+date: 2024-03-24T12:20:00-0700
 summary: Welcome to my blog! I am happy to have you hear. This post is an introduction to you about me. You will learn all about my background, what my hobbies and passions are, where I work now and have worked in the past, and a preview of what is to come with this website.
 cover: cover.jpg
 ---
+Welcome to my latest web endeavor! Building and maintaining a personal website and blog has been a long-time challenge. I have used various tools over the years to build and maintain a blog. Sometimes the blogs have failed because I got tired of writing or got busy and couldn't find the time to come back to write more. Often, I started off with a pre-built template but became frustrated because the template wouldn't do what I really wanted to do and I felt it wasn't letting me express myself the way that I wanted. But this time, I'm very excited about the new website and optimistic for the future of it.
+
+If you have seen my link:/about/[About] page or worked with me directly, then you'll probably know or guess that I have a lot of skills. While I have great technical skills and can program just about anything, my graphic design and UI design skills have not always been the best. This has always been very evident on the web. I'm very capable with HTML, CSS, and JavaScript, but taking a vision in my head and turning it into something that actually looks decent has always been a challenge for me. It is something that I have actively been working on over the past year and I have been taking online courses to improve my capabilities with design tools such as https://www.figma.com/[Figma] and learning layout theory, color theory, and typography. I have found the videos by https://www.youtube.com/@MalewiczHype[Malewicz] and his courses on his https://hype4.academy/[SquarePlanet] website have been really helpful. I have also learned a lot from https://www.youtube.com/@codehal[Codehal] and https://www.youtube.com/@KevinPowell[Kevin Powell] on https://www.youtube.com[YouTube], among others.
+
+While this website is far from perfect in a design sense, it's been finally fun to build and I am learning a lot about the advanced features of HTML and CSS. I've learned a ton about using animations in CSS without JavaScript and building responsive websites. In my testing, the site seems to work on phones, tablets, and desktops, and I am really happy about that. I will write a blog post about how I went into designing and building the website and show how I came up with the colors that I am using and designed the website using Figma, built it using https://gohugo.io[Hugo], and hosted it in https://azure.microsoft.com/en-us/products/app-service/static[Microsoft Azure].
+
+== My Objectives
+
+This website is the first part in a new attempt to rebrand myself personally. I really love to write, and I really love to write about technical topics and share things that I am working on either professionally (when I can) or personally. I love to share my knowledge and experiences and help others to learn through me. To date, I have also done a horrible job with utilizing social media or creating video content to share to give others a visual experience in which to learn as I have using videos on YouTube. I have a lot of ideas for content that I want to write about and share, and I am excited to get started.
+
+What you will hopefully see in the coming days, weeks, and months, is a long series of improvements to the website and content meant to show off ideas that I have and applications, libraries, or POCs that I am building. I look forward to blogging about topics like building microservice architectures using https://dapr.io[Dapr]; building cloud applications running on https://azure.microsoft.com[Microsoft Azure]; creating web applications and components using the full features of HTML, CSS, and JavaScript; or building mobile applications that do really cool things. I plan to also talk about building professional soft skills through public speaking and creating very cool and interactive PowerPoint presentations.
+
+I also plan to expand beyond writing and start recording content and presentations on technical topics. I have learned a lot through channels such as YouTube over the last year, and I feel it is only right to start giving back. I have a lot of ideas for content that I want to create and share, and I am excited to get started. I also have a lot of cool ideas for things that I can do with video content, and I'm excited to share those as well.
+
+== My Non-Technology Hobbies
+
+Outside of my professional and personal technical work, I *LOVE* to cook. I have been cooking since I was a young child and it's something that I do daily (my wife doesn't cook, so I pretty much run most meals that don't involve sandwiches or salads). I started off as a baker, but in recent years, I have expanded into cooking all sorts of things. I especially love cooking fancy meals for my wife and children to enjoy. Thanksgiving is my favorite day of the year to cook for, followed by Christmas. I hope to share some of my favorite recipes and show videos with cooking tips and how I make some of my favorite dishes.
+
+== Welcome!
+
+Welcome to my new blog and website! I am glad that you hear, I hope you come back, and I really hope that you find the content that I share on here valuable for your own professional or personal pursuits. Please feel free to contact me either through email or social media with any questions, ideas, or other feedback that you have.
+
+I will write a post in the near future about how I built/am building the website. If you're interested in reviewing the raw source code and content, it's available https://github.com/mfcollins3/website[here]. I am using https://gohugo.io[Hugo] to generate the static website. Please feel free to have a look.

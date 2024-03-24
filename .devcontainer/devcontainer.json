@@ -24,7 +24,8 @@
                 "codezombiech.gitignore",
                 "ms-azuretools.vscode-azurestaticwebapps",
                 "ms-azuretools.vscode-azurefunctions",
-                "ms-edgedevtools.vscode-edge-devtools"
+                "ms-edgedevtools.vscode-edge-devtools",
+                "asciidoctor.asciidoctor-vscode"
             ]
         }
     }
