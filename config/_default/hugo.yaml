@@ -7,6 +7,7 @@
 copyright: Copyright 2024 Michael F. Collins, III
 defaultContentLanguage: en
 enableEmoji: true
+enableGitInfo: true
 enableRobotsTXT: true
 languageCode: en-US
 markup:
