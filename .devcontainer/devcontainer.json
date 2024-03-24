@@ -25,7 +25,14 @@
                 "ms-azuretools.vscode-azurestaticwebapps",
                 "ms-azuretools.vscode-azurefunctions",
                 "ms-edgedevtools.vscode-edge-devtools",
-                "asciidoctor.asciidoctor-vscode"
+                "asciidoctor.asciidoctor-vscode",
+                "eliostruyf.vscode-front-matter",
+                "rusnasonov.vscode-hugo",
+                "budparr.language-hugo-vscode",
+                "eliostruyf.vscode-hugo-themer",
+                "akmittal.hugofy",
+                "esbenp.prettier-vscode",
+                "kaellarkin.hugo-shortcode-syntax"
             ]
         }
     }
