@@ -1,11 +1,6 @@
 ---
 title: My Ice Breaker
-date: 2024-03-10T17:02:00-0700
+date: 2024-03-24T12:00:00-0700
 summary: Welcome to my blog! I am happy to have you hear. This post is an introduction to you about me. You will learn all about my background, what my hobbies and passions are, where I work now and have worked in the past, and a preview of what is to come with this website.
 cover: cover.jpg
 ---
-TODO: Write the ice breaker.
-
-== Heading
-
-Second paragraph
