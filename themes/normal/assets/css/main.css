@@ -441,6 +441,7 @@ body > footer {
 
   .copyright, .legal, .contact {
     flex: 1 1 320px;
+    margin-bottom: 32px;
   }
 
   .copyright {
