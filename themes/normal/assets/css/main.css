@@ -539,7 +539,7 @@ article.post {
     font-size: 3rem;
   }
 
-  time.publish-time {
+  .publish-time {
     font-size: 0.8rem;
     margin: 1rem 0;
   }
