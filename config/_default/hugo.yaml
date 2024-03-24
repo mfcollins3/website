@@ -31,6 +31,18 @@ menus:
     - name: Recipes
       pageRef: /recipes
       weight: 50
+    - name: LinkedIn
+      post: <i class="bx bxl-linkedin"></i>
+      url: https://www.linkedin.com/in/michaelfcollins3/
+      weight: 60
+      params:
+        isSocial: true
+    - name: GitHub
+      post: <i class="bx bxl-github"></i>
+      url: https://www.github.com/mfcollins3
+      weight: 70
+      params:
+        isSocial: true
 newContentEditor: code
 permalinks:
   page:

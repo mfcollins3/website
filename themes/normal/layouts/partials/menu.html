@@ -25,6 +25,9 @@ Renders a menu for the given menu ID.
     {{- else if $page.HasMenuCurrent $entry.Menu $entry }}
       {{- $attrs = merge $attrs (dict "class" "ancestor" "aria-current" "true") }}
     {{- end }}
+    {{- if $entry.Params.isSocial }}
+      {{- $attrs = merge $attrs (dict "class" "social") }}
+    {{- end }}
     {{- $name := $entry.Name }}
     {{- with $entry.Identifier }}
       {{- with T $entry }}
@@ -38,7 +41,7 @@ Renders a menu for the given menu ID.
             {{- printf " %s=%q" $k $v | safeHTMLAttr }}
           {{- end }}
         {{- end -}}
-      >{{ $name }}</a>
+      ><span class="name">{{ $name }}</span><span class="icon">{{- $entry.Post -}}</span></a>
     </li>
   {{- end }}
 {{- end }}

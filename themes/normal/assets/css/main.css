@@ -46,11 +46,11 @@ header {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      margin: 0 32px;
         
       .logo {
         font-size: 36px;
         font-weight: 400;
-        margin-left: 30px;
         text-overflow: ellipsis;
         text-wrap: nowrap;
       }
@@ -70,12 +70,17 @@ header {
   
       ul {
         display: flex;
-        margin-right: 31px;
         gap: 24px;
         list-style: none;
   
         li {
           font-size: 24px;
+
+          a.social {
+            .name {
+              display: none;
+            }
+          }
         }
       }
 
@@ -336,7 +341,7 @@ main section.timeline {
   }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 975px) {
   header > nav > div {
     ul {
       position: absolute;
@@ -362,6 +367,11 @@ main section.timeline {
   
         a {
           font-size: 20px;
+
+          .name {
+            display: inline !important;
+            padding-right: 8px;
+          }
         }
       }
     }
@@ -383,7 +393,7 @@ main section.timeline {
     }
 
     #menu-toggle:checked ~ ul {
-      height: 310px;
+      height: 420px;
       padding: 32px 0;
 
       li {
