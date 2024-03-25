@@ -1,4 +1,5 @@
 {{ define "main" }}
+  <h1>{{ .Title }}</h1>
   {{ .Content }}
   <div class="container">
     <section class="posts">
@@ -6,12 +7,14 @@
         {{ partial "blog_post_summary.html" .}}
       {{ end }}
     </section>
-    <section class="sections">
-      <ul>
-        {{ range .Sections.ByDate.Reverse }}
-          <li><a href="{{ .RelPermalink }}">{{- .Title -}}</a> ({{- .RegularPagesRecursive.Len -}})</li>
-        {{ end }}
-      </ul>
-    </section>
+    {{ if gt .Sections.Len 0 }}
+      <section class="sections">
+        <ul>
+          {{ range .Sections.ByDate.Reverse }}
+            <li><a href="{{ .RelPermalink }}">{{- .Title -}}</a> ({{- .RegularPagesRecursive.Len -}})</li>
+          {{ end }}
+        </ul>
+      </section>
+    {{ end}}
   </div>
 {{ end }}

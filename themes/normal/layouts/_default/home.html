@@ -6,7 +6,9 @@
 <body>
   <header>
     {{ partial "navbar.html" }}
-    <div>
+    {{ $cover := .Resources.Get .Params.cover }}
+    {{ $coverImage := $cover.Process "fill 1440x810 Center" }}
+    <div style="background-image: url('{{ $coverImage.RelPermalink }}')">
         {{ .Content }}
     </div>
   </header>
@@ -14,26 +16,34 @@
     {{ $featuredPage := .Site.GetPage .Params.featuredPage }}
     {{ with $featuredPage }}
       <section id="featured-blog-post">
-        {{ $coverName := .Params.cover }}
-        {{ $coverPhoto := .Resources.Get $coverName }}
-        {{ with $coverPhoto.Fill "672x388 Center" }}
-          <a href="{{ $featuredPage.RelPermalink }}"><img src="{{ .RelPermalink }}" alt="{{ .Title }}"></a>
-        {{ end }}
-        <div>
-          <h1><a href="{{ .RelPermalink }}">{{ .Title }}</a></h1>
-          <p class="publish-date"><time datetime="{{ .PublishDate.Format "2006-01-03T15:04:05Z0700" }}">{{ .PublishDate.Format "January 2, 2006" }}</time></p>
-          {{ .Summary }}
-          <p class="read-more"><a href="{{ .RelPermalink }}">Read more</a></p>
-        </div>
+        <h2>Featured Article</h2>
+        <article>
+          {{ $coverName := .Params.cover }}
+          {{ $coverPhoto := .Resources.Get $coverName }}
+          {{ with $coverPhoto.Fill "672x388 Center" }}
+            <div class="cover">
+              <a href="{{ $featuredPage.RelPermalink }}"><img src="{{ .RelPermalink }}" alt="{{ .Title }}"></a>
+            </div>
+          {{ end }}
+          <div class="summary">
+            <h1><a href="{{ .RelPermalink }}">{{ .Title }}</a></h1>
+            <p class="publish-date"><time datetime="{{ .PublishDate.Format "2006-01-03T15:04:05Z0700" }}">{{ .PublishDate.Format "January 2, 2006" }}</time></p>
+            {{ .Summary }}
+            <p class="read-more"><a href="{{ .RelPermalink }}">Read more</a></p>
+          </div>
+        </article>
       </section>
     {{ end }}
 
     <section id="latest-blog-posts">
-      {{ range where site.RegularPages.ByPublishDate "Section" "blog" }}
-        {{ if ne .RelPermalink $featuredPage.RelPermalink }}
-          {{ partial "blog_post_summary.html" . }}
-        {{ end}}
-      {{ end }}
+      <h2>Latest Blog Posts</h2>
+      <div class="article-list">
+        {{ range where site.RegularPages.ByPublishDate "Section" "blog" }}
+          {{ if ne .RelPermalink $featuredPage.RelPermalink }}
+            {{ partial "blog_post_summary.html" . }}
+          {{ end}}
+        {{ end }}
+      </div>
     </section>
   </main>
   <footer>

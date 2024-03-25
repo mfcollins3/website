@@ -7,8 +7,6 @@ coverAttribution: Photo by <a href="https://unsplash.com/@hooverpaul55?utm_conte
 summary: |
     Devcontainers have quickly become one of my favorite development tools and something that I need to use whenever I can. Devcontainers are a great way to get new developers up and running quickly and ensuring that everyone is using the right version of development tools and a stable development environment. In this post, I will introduce you to Devcontainers and show you how to get started using them.
 ---
-:source-highlighter: rouge
-
 As a developer, I am typically a little slow to adopt new tools and technologies that are going to cost me significant money. As a married father of three, there are always new clothes or shoes to buy for the kids as they constantly grow, and my teenage son eats about two tons of food per day as he is growing to 6+ feet at the tender age of thirteen. I try to be very careful about what I spend my money on. I do not mind spending a few dollars here and there on subscriptions that I get value out of. I also love free tier services such as those that Microsoft Azure and Amazon Web Services offer. For example, what I love about building serverless applicatons in the cloud is the generous free tier services for Azure Functions, or the low cost consumption models for other _serverless_ technologies. I don't want to spend $200 to host a database with a dedicated virtual machine, for example, when I can spend one or two dollars instead on paying for a serverless consumption model database.
 
 When I first became aware of the concept of devcontainers, it was in relation to https://github.com/features/codespaces[GitHub Codespaces]. It sounds cool: create a fully configured development environment that you can host in the cloud and access from anywhere. You can share the container image with other team members and everyone can work on them together. That sounded great! Then I looked at the pricing for this service and did some real math. At the time of publishing, GitHub offers 60 hours free each month, which is wonderful. But I work on average about 60 hours a week on professional stuff, and if I am lucky I can squeeze in another 10 to 20 on personal work. So that free tier will last me less than one week. If I assume 80 hours per week and an average of 4.5 weeks per month, that's 360 hours per month. After the 60 free hours for a 2 core virtual machine, my cost would be $54 per month. That's not too bad, but if I need a 4 core virtual machine, my free hours drop to 30 and my monthly cost now becomes $118.80 per month, so it can add up. And this is on top of the $303.58 that I am paying in monthly installments for my powerful MacBook Pro 16" with the M3 Max chip and 64GB of RAM. With my MacBook Pro M3, I have I have 10 cores. What do I get from paying for a 2 core virtual machine?
@@ -42,15 +40,15 @@ I also have a `postCreateCommand` property allows me to specify a shell script i
 
 Running the Devcontainer is fairly easy but also depends on the development tool that you are using. For the purpose of this article, I will demonstrate how to run the Devcontainer in Visual Studio Code. If you have a local repository that has a `.devcontainer` subdirectory, you can open the repository directory in Visual Studio Code as a workspace. Visual Studio Code will automatically detect the presence of the Devcontainer and will ask you if you want to re-open the workspace inside of the Devcontainer:
 
-image::reopen_in_vscode.gif[Video showing reopening a workspace inside of a Devcontainer in Visual Studio Code,640,480,link=reopen_in_vscode.gif]
+image::reopen_in_vscode.gif[Video showing reopening a workspace inside of a Devcontainer in Visual Studio Code,640,480,link=reopen_in_vscode.gif,align="center"]
 
 If you click the "Reopen in Container" button, Visual Studio Code will start building the Devcontainer. This process can take a few minutes as the base container image is downloaded and the features are installed. Once the Devcontainer is built, Visual Studio Code will open a new window that is running inside of the Devcontainer. You can tell that you are inside of the Devcontainer by looking at the bottom left corner of the Visual Studio Code window. You will see the name of the Devcontainer that you are running in:
 
-image::devcontainer.png[Visual Studio Code running inside of a Devcontainer]
+image::devcontainer.png[Visual Studio Code running inside of a Devcontainer,align="center"]
 
 If your repository is cloned in a reachable location such as on GitHub, you can let Visual Studio Code create the devcontainer from the repository and build it locally.
 
-image::clone_to_devcontainer.gif[Video showing cloning a repository containing a Devcontainer and building it in Visual Studio Code,640,480,link=clone_to_devcontainer.gif]
+image::clone_to_devcontainer.gif[Video showing cloning a repository containing a Devcontainer and building it in Visual Studio Code,640,480,link=clone_to_devcontainer.gif,align="center"]
 
 == Conclusion
 
