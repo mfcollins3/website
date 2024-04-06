@@ -8,7 +8,9 @@
 
 . ${NVM_DIR}/nvm.sh
 
-npm ci
+if [ ! -d "node_modules"]; then
+    npm ci
+fi
 
 bundle install
 
