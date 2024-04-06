@@ -55,7 +55,7 @@ jobs:
           npx swa build
         env:
           GEM_PATH: ${{ github.workspace }}/vendor/bundle/ruby/3.1.0
-          HUGO_MODULE_WORKSPACE: ${{ github.workspace }}
+          HUGO_MODULE_WORKSPACE: ${{ github.workspace }}/hugo.work
       - name: Publish the preview website
         if: ${{ github.event_name == 'pull_request' }}
         run: npx swa deploy --env preview
