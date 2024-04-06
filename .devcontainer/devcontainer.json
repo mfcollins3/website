@@ -11,6 +11,9 @@
         },
         "ghcr.io/devcontainers/features/ruby:1": {
             "version": "3.1.4"
+        },
+        "ghcr.io/devcontainers/features/go:1": {
+            "version": "1.22.2"
         }
     },
     "forwardPorts": [
@@ -35,5 +38,8 @@
                 "kaellarkin.hugo-shortcode-syntax"
             ]
         }
+    },
+    "containerEnv": {
+        "HUGO_MODULE_WORKSPACE": "/workspaces/website/hugo.work"
     }
 }

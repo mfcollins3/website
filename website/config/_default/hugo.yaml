@@ -44,6 +44,9 @@ menus:
       weight: 70
       params:
         isSocial: true
+module:
+  imports:
+    - path: github.com/mfcollins3/website/themes/normal
 newContentEditor: code
 permalinks:
   page:
@@ -69,6 +72,5 @@ security:
       - (?i)GET|POST
     urls:
       - .*
-theme: normal
 timeZone: America/Phoenix
 title: Michael F. Collins, III

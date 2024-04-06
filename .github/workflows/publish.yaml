@@ -40,6 +40,10 @@ jobs:
         with:
           ruby-version: ${{ env.RUBY_VERSION}}
           bundler-cache: true
+      - name: Setup Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: '1.22.2'
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
@@ -51,6 +55,7 @@ jobs:
           npx swa build
         env:
           GEM_PATH: ${{ github.workspace }}/vendor/bundle/ruby/3.1.0
+          HUGO_MODULE_WORKSPACE: ${{ github.workspace }}/hugo.work
       - name: Publish the preview website
         if: ${{ github.event_name == 'pull_request' }}
         run: npx swa deploy --env preview

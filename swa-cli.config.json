@@ -2,7 +2,7 @@
   "$schema": "https://aka.ms/azure/static-web-apps-cli/schema",
   "configurations": {
     "website": {
-      "appLocation": ".",
+      "appLocation": "website",
       "outputLocation": "public",
       "appBuildCommand": "hugo --minify --environment production --verbose",
       "run": "hugo server",
