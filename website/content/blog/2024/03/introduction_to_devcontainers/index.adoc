@@ -26,7 +26,7 @@ To add a Devcontainer to an existing project or to start a new project in a Devc
 
 [,json,linenums]
 ----
-include::.devcontainer/devcontainer.json[]
+include::../.devcontainer/devcontainer.json[]
 ----
 
 The structure of `devcontainer.json` is documented in the https://containers.dev/implementors/spec/#devcontainerjson[specification], but here's a short description from my example. The `image` property specifies the base Docker image that will be used to create the base container. There are many different base containers out there that include specific technologies, but I have chosen to use a https://mcr.microsoft.com/en-us/product/devcontainers/base/about[generic base container from Microsoft] that is based on Debian Linux 12 (Bookworm).
