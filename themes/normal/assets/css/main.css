@@ -375,7 +375,7 @@ body {
 
 /* HOME */
 
-body > main {
+body.home > main {
   display: flex;
   flex-direction: column;
   gap: 32px;
@@ -448,5 +448,160 @@ body > main {
         }
       }
     }
+  }
+}
+
+/* ABOUT */
+
+body.about {
+  section.introduction p {
+    margin: 1rem 0;
+  }
+  section.skills {
+    margin: 32px 0;
+
+    h2 {
+      margin: 32px 0 16px 0;
+    }
+
+    .skills-container {
+      display: flex;
+      column-gap: 32px;
+      row-gap: 24px;
+      flex-wrap: wrap;
+  
+      h3 {
+        margin-bottom: 8px;
+      }
+  
+      .skill {
+        flex: 1 1 320px;
+        padding: 24px;
+        border: 2px solid #0a90c7;
+        border-radius: 8px;
+  
+        > ul {
+          columns: 2;
+          list-style: none;
+        }
+  
+        .star1::after {
+          content: '★☆☆☆☆';
+          margin-left: 8px;
+          color: #0a90c7;
+        }
+  
+        .star2::after {
+          content: '★★☆☆☆';
+          margin-left: 8px;
+          color: #0a90c7;
+        }
+  
+        .star3::after {
+          content: '★★★☆☆';
+          margin-left: 8px;
+          color: #0a90c7;
+        }
+  
+        .star4::after {
+          content: '★★★★☆';
+          margin-left: 8px;
+          color: #0a90c7;
+        }
+  
+        .star5::after {
+          content: '★★★★★';
+          margin-left: 8px;
+          color: #0a90c7;
+        }
+      }
+    }
+  }
+
+  section.timeline {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    box-shadow: none;
+  
+    .timeline-row {
+      display: flex;
+      column-gap: 64px;
+      flex-wrap: wrap;
+  
+      .timeline-column {
+        flex: 1 1 320px;
+  
+        .title {
+          font-family: 'Lora', serif;
+          font-size: 28px;
+          margin: 32px 0 16px 30px;
+        }
+  
+        .timeline-box {
+          border-left: 2px solid #0a90c7;
+  
+          .timeline-content {
+            position: relative;
+            padding-left: 27px;
+  
+            .content {
+              padding: 24px;
+              border: 2px solid #0a90c7;
+              border-radius: 8px;
+              margin-bottom: 32px;
+  
+              .year {
+                font-size: 16px;
+                color: #0a90c7;
+  
+                i {
+                  margin-right: 8px;
+                }
+              }
+  
+              h3 {
+                font-size: 19px;
+                margin: 8px 0;
+  
+                a, a:visited {
+                  color: #01090d;
+                  text-decoration: none;
+                  cursor: pointer;
+                }
+              }
+  
+              p {
+                font-size: 16px;
+                margin-bottom: 8px;
+              }
+  
+              ul {
+                padding-left: 24px;
+                margin-bottom: 8px;
+              }
+            }
+          }
+  
+          .timeline-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -10.5px;
+            width: 20px;
+            height: 20px;
+            background: #0a90c7;
+            border-radius: 50%;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .skill ul {
+    columns: 1 !important;
   }
 }
