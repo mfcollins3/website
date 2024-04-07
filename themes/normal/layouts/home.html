@@ -2,14 +2,20 @@
 <html lang="{{ or site.Language.LanguageCode site.Language.Lang }}" dir="{{ or site.Language.LanguageDirection `ltr` }}">
 <head>
   {{ partial "head.html" . }}
+  {{ $cover := .Resources.Get .Params.cover }}
+  {{ with $cover }}
+    <style>
+      body > header {
+        background-image: url('{{ $cover.RelPermalink }}');
+      }
+    </style>
+  {{ end }}
 </head>
-<body>
+<body class="home">
   <header>
     {{ partial "navbar.html" }}
-    {{ $cover := .Resources.Get .Params.cover }}
-    {{ $coverImage := $cover.Process "fill 1440x810 Center" }}
-    <div style="background-image: url('{{ $coverImage.RelPermalink }}')">
-        {{ .Content }}
+    <div>
+      {{ .Content }}
     </div>
   </header>
   <main>
@@ -20,9 +26,9 @@
         <article>
           {{ $coverName := .Params.cover }}
           {{ $coverPhoto := .Resources.Get $coverName }}
-          {{ with $coverPhoto.Fill "672x388 Center" }}
-            <div class="cover">
-              <a href="{{ $featuredPage.RelPermalink }}"><img src="{{ .RelPermalink }}" alt="{{ .Title }}"></a>
+          {{ with $coverPhoto }}
+            <div class="cover" style="background-image: url('{{ $coverPhoto.RelPermalink }}');">
+              <a href="{{ $featuredPage.RelPermalink }}"></a>
             </div>
           {{ end }}
           <div class="summary">

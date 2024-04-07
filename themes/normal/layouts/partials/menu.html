@@ -41,7 +41,8 @@ Renders a menu for the given menu ID.
             {{- printf " %s=%q" $k $v | safeHTMLAttr }}
           {{- end }}
         {{- end -}}
-      ><span class="name">{{ $name }}</span><span class="icon">{{- $entry.Post -}}</span></a>
+      ><span class="name">{{ $name }}</span>
+      {{- if $entry.Params.isSocial -}}<span class="icon">{{- $entry.Post -}}</span>{{- end -}}</a>
     </li>
   {{- end }}
 {{- end }}
