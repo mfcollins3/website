@@ -605,3 +605,105 @@ body.about {
     columns: 1 !important;
   }
 }
+
+body.blog {
+  > main {
+    div.container {
+      display: flex;
+      column-gap: 32px;
+      flex-wrap: wrap;
+      margin: 32px 0;
+
+      .posts {
+        flex: 1 1 320px;
+
+        article {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: 32px;
+          padding: 16px 0;
+          border-bottom: 1px solid var(--color-neutral-400);
+
+          div.cover {
+            flex: 0 0 320px;
+
+            a {
+              text-decoration: none;
+
+              img {
+                object-fit: cover;
+                width: 100%;
+              }
+            }
+          }
+
+          div.summary {
+            flex: 1 1 320px;
+
+            h2 {
+              font-size: 1.5rem;
+              font-weight: 400;
+              margin-left: -2px;
+
+              a, a.visited {
+                color: var(--color-neutral-900);
+                text-decoration: none;
+                cursor: pointer;
+              }
+            }
+
+            .publish-date {
+              font-size: 0.8rem;
+              margin: 8px 0;
+            }
+          }
+        }
+
+        article:first-child {
+          padding-top: 0;
+        }
+
+        article:last-child {
+          border: none;
+          padding-bottom: 0;
+        }
+      }
+
+      .sections {
+        flex: 0 0 200px;
+        border-left: 1px solid var(--color-palette-600);
+        padding-left: 32px;
+
+        ul {
+          list-style: none;
+        }
+      }
+    }
+  }
+
+  article.post {
+    code {
+      font-family: 'JetBrains Mono', monospace;
+      font-optical-sizing: auto;
+      font-style: normal;
+      background-color: var(--color-palette-100);
+    }
+
+    pre.highlight {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8rem;
+      font-optical-sizing: auto;
+      font-style: normal;
+      border: 1px solid var(--color-neutral-700);
+      box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+      padding: 0.5rem;
+    }    
+  }
+}
+
+@media (prefers-color-scheme: dark) { 
+  div.summary h2 a {
+    color: var(--color-neutral-100) !important;
+  }
+}
