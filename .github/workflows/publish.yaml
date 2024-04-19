@@ -16,7 +16,7 @@ on:
       - main
 
 env:
-  HUGO_VERSION: 0.124.0
+  HUGO_VERSION: 0.125.1
   RUBY_VERSION: 3.1.4
   
 jobs:
