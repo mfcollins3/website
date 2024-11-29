@@ -84,7 +84,7 @@ jobs:
             --baseURL "${{ steps.pages.outputs.base_url }}/"
         working-directory: src/web
       - name: Upload artifact
-        uses: actions/upload-pages-artifactv3
+        uses: actions/upload-pages-artifact@v3
         with:
           path: src/web/public
 
