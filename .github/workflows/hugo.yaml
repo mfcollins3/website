@@ -29,7 +29,7 @@ on:
 permissions:
   contents: read
   pages: write
-  id-token: weite
+  id-token: write
 
 concurrency:
   group: pages
