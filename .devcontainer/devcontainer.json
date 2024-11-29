@@ -3,5 +3,16 @@
     "build": {
         "dockerfile": "Dockerfile",
         "context": "."
+    },
+    "features": {
+        "ghcr.io/devcontainers/features/git:1": {},
+        "ghcr.io/devcontainers/features/github-cli:1": {},
+        "ghcr.io/devcontainers/features/go:1": {
+            "version": "1.23.3"
+        },
+        "ghcr.io/devcontainers/features/hugo:1": {
+            "version": "0.139.3",
+            "extended": true
+        }
     }
 }
