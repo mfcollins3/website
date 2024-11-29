@@ -1,0 +1,28 @@
+{
+    "name": "@mfcollins3/website",
+    "version": "1.0.0",
+    "description": "The personal website and blog for Michael Collins",
+    "keywords": [
+        "blog",
+        "hugo",
+        "website"
+    ],
+    "homepage": "https://www.michaelcollins.blog",
+    "bugs": {
+        "email": "mfcollins3@me.com",
+        "url": "https://github.com/mfcollins3/website/issues"
+    },
+    "license": "(MIT OR CC-BY-ND-4.0)",
+    "author": {
+        "name": "Michael Collins",
+        "email": "mfcollins3@me.com",
+        "url": "https://www.michaelcollins.blog"
+    },
+    "repository": "github:mfcollins3/website",
+    "scripts": {},
+    "devDependencies": {
+        "prettier": "^3.4.1",
+        "prettier-plugin-go-template": "^0.0.15"
+    },
+    "private": true
+}

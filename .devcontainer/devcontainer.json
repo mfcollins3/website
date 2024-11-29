@@ -13,6 +13,24 @@
         "ghcr.io/devcontainers/features/hugo:1": {
             "version": "0.139.3",
             "extended": true
+        },
+        "ghcr.io/devcontainers/features/node:1": {
+            "version": "22.11.0"
         }
-    }
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "eliostruyf.vscode-front-matter",
+                "rusnasonov.vscode-hugo",
+                "budparr.language-hugo-vscode",
+                "eliostruyf.vscode-hugo-themer",
+                "akmittal.hugofy",
+                "kaellarkin.hugo-shortcode-syntax",
+                "esbenp.prettier-vscode",
+                "codezombiech.gitignore"
+            ]
+        }
+    },
+    "postCreateCommand": "bash .devcontainer/postCreateCommand.sh"
 }
