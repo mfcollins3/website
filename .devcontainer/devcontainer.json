@@ -1,0 +1,7 @@
+{
+    "name": "website",
+    "build": {
+        "dockerfile": "Dockerfile",
+        "context": "."
+    }
+}
