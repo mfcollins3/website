@@ -16,6 +16,18 @@
         },
         "ghcr.io/devcontainers/features/node:1": {
             "version": "22.11.0"
+        },
+        "ghcr.io/devcontainers/features/ruby:1": {
+            "version": "3.2.6"
+        },
+        "ghcr.io/devcontainers/features/python:1": {
+            "version": "3.13.0"
+        },
+        "ghcr.io/devcontainers/features/java:1": {
+            "version": "23.0.1"
+        },
+        "ghcr.io/devcontainers/features/rust:1": {
+            "version": "1.83.0"
         }
     },
     "customizations": {
@@ -28,7 +40,11 @@
                 "akmittal.hugofy",
                 "kaellarkin.hugo-shortcode-syntax",
                 "esbenp.prettier-vscode",
-                "codezombiech.gitignore"
+                "codezombiech.gitignore",
+                "asciidoctor.asciidoctor-vscode",
+                "shopify.ruby-lsp",
+                "ms-azuretools.vscode-docker",
+                "ms-python.python"
             ]
         }
     },

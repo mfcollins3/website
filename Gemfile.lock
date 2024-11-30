@@ -1,0 +1,78 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    asciidoctor (2.0.23)
+    asciidoctor-bibtex (0.9.0)
+      asciidoctor (~> 2.0)
+      bibtex-ruby (~> 6.1)
+      citeproc-ruby (~> 1)
+      csl-styles (~> 1)
+      latex-decode (~> 0.2)
+    asciidoctor-diagram (2.3.1)
+      asciidoctor (>= 1.5.7, < 3.x)
+      asciidoctor-diagram-ditaamini (~> 1.0)
+      asciidoctor-diagram-plantuml (~> 1.2021)
+      rexml
+    asciidoctor-diagram-batik (1.17)
+    asciidoctor-diagram-ditaamini (1.0.3)
+    asciidoctor-diagram-plantuml (1.2024.6)
+      asciidoctor-diagram-batik (~> 1.17)
+    asciidoctor-interdoc-reftext (0.5.3)
+      asciidoctor (>= 1.5.6, < 3.0)
+    asciidoctor-katex (0.4.1)
+      asciidoctor (>= 1.5.6, < 3.0)
+      katex (~> 0.9.0)
+    asciidoctor-mathematical (0.3.5)
+      asciidoctor (~> 2.0)
+      asciimath (~> 2.0)
+      mathematical (~> 1.6.0)
+    asciimath (2.0.5)
+    barby (0.7.0)
+    bibtex-ruby (6.1.0)
+      latex-decode (~> 0.0)
+      racc (~> 1.7)
+    chunky_png (1.4.0)
+    citeproc (1.0.10)
+      namae (~> 1.0)
+    citeproc-ruby (1.1.14)
+      citeproc (~> 1.0, >= 1.0.9)
+      csl (~> 1.6)
+    csl (1.6.0)
+      namae (~> 1.0)
+      rexml
+    csl-styles (1.0.1.11)
+      csl (~> 1.0)
+    execjs (2.10.0)
+    katex (0.9.0)
+      execjs (~> 2.7)
+    latex-decode (0.4.0)
+    mathematical (1.6.20)
+      ruby-enum (>= 0.4, < 2.0)
+    namae (1.2.0)
+      racc (~> 1.7)
+    racc (1.8.1)
+    rexml (3.3.9)
+    rqrcode (2.2.0)
+      chunky_png (~> 1.0)
+      rqrcode_core (~> 1.0)
+    rqrcode_core (1.2.0)
+    ruby-enum (1.0.0)
+
+PLATFORMS
+  aarch64-linux
+
+DEPENDENCIES
+  asciidoctor
+  asciidoctor-bibtex
+  asciidoctor-diagram
+  asciidoctor-diagram-ditaamini
+  asciidoctor-diagram-plantuml
+  asciidoctor-interdoc-reftext
+  asciidoctor-katex
+  asciidoctor-mathematical
+  barby
+  chunky_png
+  rqrcode
+
+BUNDLED WITH
+   2.4.19

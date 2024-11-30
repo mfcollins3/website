@@ -21,3 +21,22 @@
 FROM mcr.microsoft.com/devcontainers/base:1.0.17-bookworm
 
 RUN apt-get update && apt-get install gnupg -y
+RUN apt-get -qq -y install bison \
+    flex \
+    libffi-dev \
+    libxml2-dev \
+    libgdk-pixbuf2.0-dev \
+    libcairo2-dev \
+    libpango1.0-dev \
+    fonts-lyx \
+    cmake
+RUN apt update && apt install -y chromium graphviz
+RUN apt-get update && apt-get install -y gnuplot
+RUN apt update && apt install -y lilypond
+RUN apt update && apt install -y build-essential \
+    libjpeg-dev \
+    libpng-dev \
+    libtiff-dev \
+    imagemagick
+RUN apt update && apt install -y mscgen
+RUN apt upgrade -y

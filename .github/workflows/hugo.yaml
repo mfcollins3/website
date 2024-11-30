@@ -70,8 +70,20 @@ jobs:
       #     go-version: 1.23.3
       #     cache-dependencypath: |
       #       src/web/go.sum
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.2.6
+          bundler-cache: true
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.13.0'
+          cache: pip
       - name: Install Node.js dependencies
         run: npm ci
+      - name: Install Python dependencies
+        run: pip install requirements.txt
       - name: Build the website
         env:
           HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache

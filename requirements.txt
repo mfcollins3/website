@@ -1,0 +1,13 @@
+actdiag==3.0.0
+blockdiag==3.0.0
+diagrams==0.24.1
+funcparserlib==2.0.0a0
+graphviz==0.20.3
+Jinja2==3.1.4
+MarkupSafe==3.0.2
+nwdiag==3.0.0
+pillow==11.0.0
+pycairo==1.27.0
+seqdiag==3.0.0
+setuptools==57.5.0
+webcolors==24.11.1
