@@ -24,6 +24,9 @@ enableEmoji: true
 enableGitInfo: true
 enableRobotsTXT: true
 languageCode: "en-US"
+module:
+  imports:
+    - path: github.com/mfcollins3/website/src/themes/normal
 newContentEditor: code
 timeZone: "America/Phoenix"
 title: "Michael F. Collins, III"

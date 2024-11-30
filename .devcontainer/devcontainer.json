@@ -34,6 +34,6 @@
     },
     "postCreateCommand": "bash .devcontainer/postCreateCommand.sh",
     "containerEnv": {
-        "HUGO_MDOULE_WORKSPACE": "/workspaces/website/hugo.work"
+        "HUGO_MODULE_WORKSPACE": "/workspaces/website/hugo.work"
     }
 }
