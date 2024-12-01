@@ -35,5 +35,8 @@
     "postCreateCommand": "bash .devcontainer/postCreateCommand.sh",
     "containerEnv": {
         "HUGO_MODULE_WORKSPACE": "/workspaces/website/hugo.work"
-    }
+    },
+    "forwardPorts": [
+        1313
+    ]
 }

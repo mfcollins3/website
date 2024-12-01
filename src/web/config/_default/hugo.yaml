@@ -24,10 +24,16 @@ enableEmoji: true
 enableGitInfo: true
 enableRobotsTXT: true
 languageCode: "en-US"
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
 module:
   imports:
     - path: github.com/mfcollins3/website/src/themes/normal
 newContentEditor: code
+permalinks:
+  blog: /blog/:year/:month/:slug
 services:
   disqus:
     shortname: michaelfcollinsiii
