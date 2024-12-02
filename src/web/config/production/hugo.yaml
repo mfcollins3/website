@@ -19,3 +19,6 @@
 # IN THE SOFTWARE.
 
 baseurl: "https://michaelfcollins3.dev"
+services:
+  googleAnalytics:
+    id: G-NDGMMHLHNR
