@@ -1,6 +1,6 @@
 ---
 title: My Icebreaker
-date: 2024-11-30
+date: 2024-12-01
 description: |
     This article is an introduction to me, my website, and my blog. I describe
     who I am and what kind of content I will be posting to my blog and the
