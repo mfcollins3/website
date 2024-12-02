@@ -25,10 +25,6 @@ on:
     branches:
       - main
 
-permissions:
-  contents: read
-  id-token: read
-
 defaults:
   run:
     shell: bash
