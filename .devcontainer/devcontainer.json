@@ -6,12 +6,22 @@
     },
     "features": {
         "ghcr.io/devcontainers/features/git:1": {},
-        "ghcr.io/devcontainers/features/github-cli:1": {}
+        "ghcr.io/devcontainers/features/github-cli:1": {},
+        "ghcr.io/devcontainers/features/go:1": {
+            "version": "1.24.0"
+        },
+        "ghcr.io/devcontainers/features/hugo:1": {
+            "version": "0.143.1",
+            "extended": true
+        }
     },
     "customizations": {
         "vscode": {
             "extensions": []
         }
     },
-    "postCreateCommand": "bash .devcontainer/postCreateCommand.sh"
+    "postCreateCommand": "bash .devcontainer/postCreateCommand.sh",
+    "remoteEnv": {
+        "HUGO_MODULE_WORKSPACE": "/workspaces/website/hugo.work"
+    }
 }
