@@ -19,5 +19,8 @@
         "vscode": {
             "extensions": []
         }
-    }
+    },
+    "forwardPorts": [
+        1313
+    ]
 }
