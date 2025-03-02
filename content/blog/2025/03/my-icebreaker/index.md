@@ -1,6 +1,5 @@
 ---
 title: My Icebreaker
-draft: true
 date: 2025-03-02
 description: >
     This post is an introduction where I introduce myself to readers and new
