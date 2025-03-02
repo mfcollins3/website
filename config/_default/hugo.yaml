@@ -29,6 +29,17 @@ theme: "normal"
 timeZone: "America/Phoenix"
 title: "Michael F. Collins, III"
 
+menus:
+  main:
+    - name: Home
+      title: Home
+      pageRef: /
+      weight: 1
+    - name: Blog
+      title: Blog
+      pageRef: /blog
+      weight: 10
+
 params:
   social:
     twitter: mfcollins3

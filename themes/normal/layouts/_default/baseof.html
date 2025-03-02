@@ -2,10 +2,15 @@
 <html lang="{{ site.Language.LanguageCode }}" dir="{{ or site.Language.LanguageDirection `ltr` }}">
 <head>
   {{ partial "head.html" . }}
+  {{ with .OutputFormats.Get "rss" -}}
+    {{ printf `<link rel=%q type=%q href=%q title=%q>` .Rel .MediaType.Type .Permalink site.Title | safeHTML }}
+  {{ end }}
 </head>
 <body>
-  <header>
-    {{ partial "header.html" . }}
+  <header {{- with .Resources.Get "cover.jpg" }} style="background-image: url('{{ .RelPermalink }}')"{{ end }}>
+    <div>
+      {{ partial "header.html" . }}
+    </div>
   </header>
   <main>
     {{ block "main" . }}{{ end }}
