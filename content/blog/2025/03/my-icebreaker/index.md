@@ -1,6 +1,7 @@
 ---
 title: My Icebreaker
 date: 2025-03-02
+disqus_identifier: my-icebreaker
 description: >
     This post is an introduction where I introduce myself to readers and new
     visitors to my website and blog. I talk about who I am, what I do
