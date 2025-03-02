@@ -25,9 +25,14 @@ enableGitInfo: true
 enableRobotsTXT: true
 languageCode: "en-US"
 netContentEditor: code
-services:
-  disqus:
-    shortname: michaelfcollinsiii
 theme: "normal"
 timeZone: "America/Phoenix"
 title: "Michael F. Collins, III"
+
+params:
+  social:
+    twitter: mfcollins3
+
+services:
+  disqus:
+    shortname: michaelfcollinsiii
