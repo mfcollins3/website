@@ -1,6 +1,5 @@
 ---
 title: Comment Policy for michaelfcollins3.dev
-draft: true
 disqus_identifier: comment-policy
 type: comment-policy
 date: 2025-03-02
