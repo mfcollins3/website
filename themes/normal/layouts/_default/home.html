@@ -1,7 +1,16 @@
 {{ define "main" }}
   {{ .Content }}
-  {{ range site.RegularPages }}
-    <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
-    {{ .Summary }}
-  {{ end }}
+  <div class="section-container">
+    <section class="blog">
+      <h1>Latest Blog Articles</h1>
+      {{ range site.RegularPages }}
+        <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
+        {{ .Summary }}
+      {{ end }}
+    </section>
+    <section class="bluesky-feed">
+      <h1>Recent Blue Sky Posts</h1>
+      {{ partialCached "bluesky_feed.html" . }}
+    </section>
+  </div>
 {{ end }}

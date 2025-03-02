@@ -1,0 +1,19 @@
+<rss version="2.0">
+  <channel>
+    <description>I am a professional software developer and I love to cook. I work for Neudesic and am a Senior Director for Application Innovation in the Desert market (Phoenix and Las Vegas). I am currently based in the Phoenix metro area and live in Surprise, Arizona.</description>
+    <link>https://bsky.app/profile/mfcollins3.bsky.social</link>
+    <title>@mfcollins3.bsky.social - Michael F. Collins, III</title>
+    <item>
+      <link>https://bsky.app/profile/mfcollins3.bsky.social/post/3lcrjwpsahk2t</link>
+      <description>You know when you spend all day building something great and everything is clicking, but your program isn’t working right and you’re getting frustrated and then you take a break to go to dinner and come home and read the documentation and then you change your code to do it the right way?</description>
+      <pubDate>2024-12-08T06:01:00+00:00</pubDate>
+      <guid isPermaLink="false">at://did:plc:ukyfcg7nrk44w2wqpj2afjl5/app.bsky.feed.post/3lcrjwpsahk2t</guid>
+    </item>
+    <item>
+      <link>https://bsky.app/profile/mfcollins3.bsky.social/post/3lbocp57wks2e</link>
+      <description>I built my biggest dev container to date: Prometheus, Grafana, Dapr services, Redis, RabbitMQ, Azurite, SQL Server, Cosmos DB emulator, OpenZipkin, APISIX, Traefik, and ngrok. It’s almost the ultimate dev container for local Azure development!</description>
+      <pubDate>2024-11-24T05:48:00+00:00</pubDate>
+      <guid isPermaLink="false">at://did:plc:ukyfcg7nrk44w2wqpj2afjl5/app.bsky.feed.post/3lbocp57wks2e</guid>
+    </item>
+  </channel>
+</rss>

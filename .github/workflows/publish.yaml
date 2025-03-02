@@ -26,6 +26,8 @@ on:
     branches:
       - main
   workflow_dispatch:
+  schedule:
+    - cron: '0 0 * * *'
 
 permissions:
   contents: read
@@ -58,6 +60,11 @@ jobs:
       - name: Setup GitHub Pages
         id: pages
         uses: actions/configure-pages@v5
+      - name: Download and Format the Blue Sky RSS Feed
+        uses: mfcollins3/hugoify-bluesky-rss-feed@main
+        with:
+          url: https://bsky.app/profile/mfcollins3.bsky.social/rss
+          path: content/bluesky_rss.xml
       - name: Build the website
         env:
           HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache

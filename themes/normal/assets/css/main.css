@@ -81,6 +81,25 @@ main {
       padding-inline: 1em;
     }
   }
+
+  div.section-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1em;
+
+    section.blog {
+      grid-column: 1 / 2;
+    }
+
+    section.bluesky-feed {
+      grid-column: 2 / 3;
+
+      ul {
+        list-style: none;
+        padding: 0;
+      }
+    }
+  }
 }
 
 footer {

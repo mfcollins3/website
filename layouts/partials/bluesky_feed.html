@@ -1,0 +1,23 @@
+{{ $data := dict }}
+{{ with try (.Resources.Get "bluesky_rss.xml") }}
+    {{ with .Err }}
+        {{ errorf "%s" . }}
+    {{ else with .Value }}
+        {{ $data = . | transform.Unmarshal }}
+    {{ else }}
+        {{ errorf "Unable to get page resource" }}
+    {{ end }}
+{{ end }}
+
+{{ with $data.channel.item }}
+    <ul>
+        {{ range first 10 . }}
+            {{ $dateMachine := dateFormat "2006-01-02T15:04:05-07:00" .pubDate }}
+            <li>
+                <p class="pub-date"><time datetime="{{ $dateMachine }}">{{ dateFormat ":date_long" .pubDate }} {{ dateFormat ":time_long" .pubDate }}</time></p>
+                <p class="description">{{ .description }}</p>
+                <p class="link"><a href="{{ .link }}">View</a></p>
+            </li>
+        {{ end }}
+    </ul>
+{{ end }}
