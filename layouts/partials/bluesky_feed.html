@@ -14,9 +14,8 @@
         {{ range first 10 . }}
             {{ $dateMachine := dateFormat "2006-01-02T15:04:05-07:00" .pubDate }}
             <li>
-                <p class="pub-date"><time datetime="{{ $dateMachine }}">{{ dateFormat ":date_long" .pubDate }} {{ dateFormat ":time_short" .pubDate }}</time></p>
+                <p class="pub-date"><a href="{{ .link }}"><time datetime="{{ $dateMachine }}">{{ dateFormat ":date_long" .pubDate }} {{ dateFormat ":time_short" .pubDate }}</time></a></p>
                 <p class="description">{{ .description }}</p>
-                <p class="link"><a href="{{ .link }}">View</a></p>
             </li>
         {{ end }}
     </ul>

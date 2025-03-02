@@ -3,9 +3,12 @@
   <div class="section-container">
     <section class="blog">
       <h1>Latest Blog Articles</h1>
-      {{ range site.RegularPages }}
-        <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
-        {{ .Summary }}
+      {{ range (where .RegularPagesRecursive "Section" "blog" | first 5) }}
+        <article class="blog-post">
+          <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
+          <p class="summary">{{ .Summary }}</p>
+          <p class="read-link"><a href="{{ .RelPermalink }}">Read</a></p>
+        </article>
       {{ end }}
     </section>
     <section class="bluesky-feed">

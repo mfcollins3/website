@@ -89,6 +89,10 @@ main {
 
     section.blog {
       grid-column: 1 / 2;
+
+      p.summary {
+        line-height: 1.5em;
+      }
     }
 
     section.bluesky-feed {
@@ -97,6 +101,10 @@ main {
       ul {
         list-style: none;
         padding: 0;
+
+        p.description {
+          line-height: 1.5em;
+        }
       }
     }
   }
@@ -117,4 +125,10 @@ div[class^="iub__"] {
 a {
   color: #00e;
   text-decoration: none;
+}
+
+@media (max-width: 800px) {
+  main > div.section-container {
+    display: block;
+  }
 }
