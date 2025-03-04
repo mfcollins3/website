@@ -1,8 +1,40 @@
+{{ define "breadcrumb" }}
+  {{ if .Parent }}
+    {{ template "breadcrumb" .Parent }}
+    <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+  {{ else }}
+    <li><a href="{{ .Site.Home.RelPermalink }}">Home</a></li>
+  {{ end}}
+{{ end }}
+
 {{ define "main" }}
+  <nav class="breadcrumb">
+    <ul>
+      {{ template "breadcrumb" .Parent }}
+    </ul>
+  </nav>
+
   <h1>{{ .Title }}</h1>
+  
   {{ .Content }}
-  {{ range .Pages }}
-    <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
-    {{ .Summary }}
-  {{ end }}
+  
+  {{ $sections := where .Pages "IsSection" true }}
+  <div class="section-container {{ .Section }} {{ if eq 0 (len $sections) }}leaf{{ end }}">
+    <section class="subsections">
+      <ul>
+        {{ range $sections }}
+          <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+        {{ end }}
+      </ul>
+    </section>
+    <section class="blog-posts">
+      {{ range .RegularPagesRecursive }}
+        <article class="blog-post">
+          <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
+          <p class="summary">{{ .Summary }}</p>
+          <p class="read-link"><a href="{{ .RelPermalink }}">Read</a></p>
+        </article>
+      {{ end }}
+    </section>
+  </div>
 {{ end }}

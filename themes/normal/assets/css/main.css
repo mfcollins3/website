@@ -82,6 +82,29 @@ main {
     }
   }
 
+  div.section-container.leaf {
+    display: block;
+
+    section.subsections {
+      display: none;
+    }
+  }
+
+  div.section-container.blog {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 1em;
+
+    section.subsections {
+      grid-column: 2 / 3;
+    }
+
+    section.blog-posts {
+      grid-column: 1 / 2;
+      grid-row: 1 / 2;
+    }
+  }
+
   div.section-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -106,6 +129,24 @@ main {
           line-height: 1.5em;
         }
       }
+    }
+  }
+
+  nav.breadcrumb {
+    ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+    }
+
+    li::after {
+      content: "<";
+      margin: 0.5em;
+    }
+
+    li:last-child::after {
+      content: "";
+      margin: 0;
     }
   }
 }
