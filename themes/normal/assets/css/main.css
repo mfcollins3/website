@@ -80,6 +80,10 @@ main {
       margin: 0;
       padding-inline: 1em;
     }
+
+    img {
+      max-width: 100%;
+    }
   }
 
   div.section-container.leaf {
