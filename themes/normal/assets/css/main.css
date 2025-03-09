@@ -69,6 +69,27 @@ main {
   grid-row: 2 / 3;
   grid-column: 2 / 3;
 
+  article.blog-post {
+    p.summary {
+      padding: 1em 0;
+      border-top: 1px solid #ccc;
+      border-bottom: 1px solid #ccc;
+      font-size: 0.8em;
+      font-style: italic;
+      font-weight: 200;
+    }
+
+    ul.metadata {
+      list-style: none;
+      padding: 0;
+      margin: 1em 0;
+
+      li {
+        margin: 0.5em 0;
+      }
+    }
+  }
+
   article {
     p {
       line-height: 1.75rem;
@@ -79,6 +100,37 @@ main {
       border-left: 5px solid #ccc;
       margin: 0;
       padding-inline: 1em;
+    }
+
+    img {
+      max-width: 100%;
+    }
+
+    li {
+      margin: 0.5em 0;
+    }
+  }
+
+  div.section-container.leaf {
+    display: block;
+
+    section.subsections {
+      display: none;
+    }
+  }
+
+  div.section-container.blog {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 1em;
+
+    section.subsections {
+      grid-column: 2 / 3;
+    }
+
+    section.blog-posts {
+      grid-column: 1 / 2;
+      grid-row: 1 / 2;
     }
   }
 
@@ -106,6 +158,24 @@ main {
           line-height: 1.5em;
         }
       }
+    }
+  }
+
+  nav.breadcrumb {
+    ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+    }
+
+    li::after {
+      content: "<";
+      margin: 0.5em;
+    }
+
+    li:last-child::after {
+      content: "";
+      margin: 0;
     }
   }
 }
