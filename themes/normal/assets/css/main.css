@@ -78,6 +78,16 @@ main {
       font-style: italic;
       font-weight: 200;
     }
+
+    ul.metadata {
+      list-style: none;
+      padding: 0;
+      margin: 1em 0;
+
+      li {
+        margin: 0.5em 0;
+      }
+    }
   }
 
   article {
@@ -94,6 +104,10 @@ main {
 
     img {
       max-width: 100%;
+    }
+
+    li {
+      margin: 0.5em 0;
     }
   }
 
