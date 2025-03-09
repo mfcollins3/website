@@ -1,12 +1,26 @@
 {{ define "main" }}
-  <article>
+  <article class="blog-post">
     <h1>{{ .Title }}</h1>
 
     {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
     {{ $dateHuman := .Date | time.Format ":date_long" }}
-    <time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>
+    {{ $lastmodMachine := .Lastmod | time.Format "2006-01-02T15:04:05-07:00" }}
+    {{ $lastmodHumanDate := .Lastmod | time.Format ":date_long" }}
+    {{ $lastmodHumanTime := .Lastmod | time.Format ":time_long" }}
+    <p class="publish-date">
+      <time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>
+    </p>
   
-    {{ .Content }}
+    <p class="summary">{{ .Summary }}</p>
+
+    <div class="content">
+      {{ .Content }}
+    </div>
+
+    <p class="lastmod-date">
+      Last modified: {{ $lastmodHumanDate }} {{ $lastmodHumanTime }}
+    </p>
+    
     {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
     {{ template "_internal/disqus.html" . }}
   </article>

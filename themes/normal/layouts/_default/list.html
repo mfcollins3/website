@@ -29,11 +29,7 @@
     </section>
     <section class="blog-posts">
       {{ range .RegularPagesRecursive }}
-        <article class="blog-post">
-          <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
-          <p class="summary">{{ .Summary }}</p>
-          <p class="read-link"><a href="{{ .RelPermalink }}">Read</a></p>
-        </article>
+        {{ partial "blog_post.html" . }}
       {{ end }}
     </section>
   </div>
