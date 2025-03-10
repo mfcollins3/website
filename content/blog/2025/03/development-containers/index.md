@@ -67,12 +67,12 @@ The `devcontainer.json` file is the specification for the development container.
 
 For the simple case, our `devcontainer.json` file will look like this:
 
-```json
+{{< highlight json>}}
 {
     "name": "basic-devcontainer",
     "image": "mcr.microsoft.com/devcontainers/base:1.2.3-ubuntu24.04"
 }
-```
+{{< /highlight >}}
 
 This is the very minimum that you need to create a development container. If you have this, you can start your development container and use Visual Studio Code to attach to it:
 
@@ -88,7 +88,7 @@ There are several ways that we can add additional software to our base container
 
 A list of available features that have been published are available [here](https://containers.dev/features). You can view the whole list or search for a specific package that you are interested in. Let's say for this example that we want [Node.js](https://nodejs.org) to build a JavaScript application in our development container. We can add Node.js to our development container by adding and configuring the [Node.js feature](https://github.com/devcontainers/features/tree/main/src/node). We will update our `devcontainer.json` file by adding the feature to it:
 
-```json
+{{< highlight json >}}
 {
     "name": "basic-devcontainer",
     "image": "mcr.microsoft.com/devcontainers/base:1.2.3-ubuntu24.04",
@@ -98,7 +98,7 @@ A list of available features that have been published are available [here](https
         }
     }
 }
-```
+{{< /highlight >}}
 
 The `ghcr.io/devcontainers/features/node` URI tells Visual Studio Code where it can find the feature's definition. This is a browsable URL. [Click this to see](https://ghcr.io/devcontainers/features/node). The `1` is the version number or tag for the feature. The version number uses [Semantic Versioning](https://semver.org). We can use a specific version such as `1.6.1` (the latest version at the time of writing) or a generic version number such as `1`, which indicates to use the latest version with the major version number `1`.
 
@@ -108,27 +108,27 @@ Inside of the feature specification, I provided a value for the `version` field.
 
 In certain cases, I need to customize the base container to install something that can't be addressed by a feature. In that case, I need to create a new Docker container based on the base container, but with my customizations. I can do this by creating a `Dockerfile` and updating my `devcontainer.json` to reference the `Dockerfile`. When I do this and open my development container in Visual Studio Code, Visual Studio Code will use the `Dockerfile` to build the new development container image before launching the development container. We can reuse the same base container image specified in `devcontainer.json` when building the new development container image. Here's a `Dockerfile`:
 
-```docker
+{{< highlight dockerfile >}}
 FROM mcr.microsoft.com/devcontainers/base:1.2.3-ubuntu24.04
 
 # gnupg2 is required for Git commit signing to work in the development
 # container.
 RUN apt-get update && apt-get install -y gnupg2
-```
+{{< /highlight >}}
 
 In this example from one of my development containers, I'm installing `gnupg2` into the container to support Git commit signing using GPG. (I don't technically need this anymore now that I've switched over to SSH commit signing, but I still usually include it for developers that don't have 1Password).
 
 I also typically create a `.dockerignore` file to exclude the development container files from being uploaded to the Docker daemon when the development container image is created:
 
-```plain
+{{< highlight plain >}}
 .dockerignore
 devcontainer.json
 Dockerfile
-```
+{{< /highlight >}}
 
 We can next update our `devcontainer.json` specification to look like this:
 
-```json
+{{< highlight json >}}
 {
     "name": "custom-devcontainer",
     "build": {
@@ -141,7 +141,7 @@ We can next update our `devcontainer.json` specification to look like this:
         }
     }
 }
-```
+{{< /highlight >}}
 
 The presence of the `build` field in `devcontainer.json` tells Visual Studio Code that it needs to build the development container image using `Dockerfile`. The `context` field tells Visual Studio Code to use the `.devcontainer` subdirectory as the _context_ for where `Dockerfile` and other files necessary for the development container can be found.
 
@@ -151,7 +151,7 @@ It's rare that I build any software that does not have dependencies. At a minimu
 
 To begin with, we'll create a `compose.yaml` specification that tells Docker Compose how to build and run our development container:
 
-```yaml
+{{< highlight yaml >}}
 services:
   app:
     build:
@@ -166,13 +166,13 @@ services:
       - SYS_PTRACE
     security_opt:
       - seccomp:unconfined
-```
+{{< /highlight >}}
 
 This specification tells Docker Compose to create a container named `app` based on `Dockerfile`. The `app` container will mount the root directory of my local Git repository in the `app` container at `/workspace`. When the `app` container is started, it will execute the `sleep infinity` command. Because our development container is not running any kind of service, if we start it without a command, the development container will stop immediately and unload. By running it with the `sleep infinity` command, we keep the development container alive so that Visual Studio Code can attach to it and we can get terminal access to the development container.
 
 We can now update our `devcontainer.json` file to use Docker Compose:
 
-```json
+{{< highlight json >}}
 {
     "name": "my-project",
     "dockerComposeFile": "compose.yaml",
@@ -184,20 +184,20 @@ We can now update our `devcontainer.json` file to use Docker Compose:
         }
     }
 }
-```
+{{< /highlight >}}
 
 I also update my `.dockerignore` file to exclude `compose.yaml`:
 
-```plain
+{{< highlight plain >}}
 .dockerignore
 compose.yaml
 devcontainer.yaml
 Dockerfile
-```
+{{< /highlight >}}
 
 Now if I add a service dependency so that I can develop against it, I can add it to `compose.yaml`. Using my previous example, if I'm building a solution that is being targeted for [Microsoft's Azure Cloud](https://azure.microsoft.com/en-us), I may use Azure SQL for my persistent data. But I can't run Azure SQL locally. I can always use a cloud instance, but it's not as convenient as having a local database to work with. But what I can do is run Microsoft SQL Server. While not 100% compatible, they're pretty close. Microsoft also makes Microsoft SQL Server available as a [Linux-based container](https://mcr.microsoft.com/en-us/artifact/mar/mssql/server/about). We can add it to our `compose.yaml` file:
 
-```yaml
+{{< highlight yaml >}}
 services:
   app:
     build:
@@ -226,7 +226,7 @@ services:
 
 volumes:
   - sqlserver_data:
-```
+{{< /highlight >}}
 
 When I start my development container now, Visual Studio Code is going to launch and connect to my development container, but it's also going to start Microsoft SQL Server. And both the development container and SQL Server will be connected to the same virtual network, so my programs running in the `app` service can connect to SQL Server using the hostname `sqlserver`.
 

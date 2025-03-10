@@ -29,6 +29,12 @@ theme: "normal"
 timeZone: "America/Phoenix"
 title: "Michael F. Collins, III"
 
+markup:
+  highlight:
+    lineNos: true
+    noClasses: false
+    style: github-dark
+
 menus:
   main:
     - name: Home
