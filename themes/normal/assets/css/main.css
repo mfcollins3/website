@@ -197,6 +197,10 @@ a {
   text-decoration: none;
 }
 
+.highlight {
+  overflow-x: auto;
+}
+
 @media (max-width: 800px) {
   main > div.section-container {
     display: block;
