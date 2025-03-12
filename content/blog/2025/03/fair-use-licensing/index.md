@@ -1,6 +1,5 @@
 ---
 title: Fair Use Licensing and Open Development
-draft: true
 date: 2025-03-11
 description: >
     I look at different models for developing and licensing software that I develop. I compare and contrast open-source development to closed-source, commercial development. I then introduce and explore the fair-code model.
