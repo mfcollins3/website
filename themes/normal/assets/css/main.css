@@ -185,6 +185,36 @@ footer {
   grid-column: 2 / 3;
   border-top: 1px solid #222;
   margin-top: 1rem;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1em;
+
+  .terms {
+    grid-column: 1 / 2;
+    line-height: 1.5em;
+  }
+
+  .contact {
+    grid-column: 3 / 4;
+
+    .name {
+      font-weight: 600;
+    }
+
+    .address {
+      line-height: 1.5em;
+    }
+    
+    ul {
+      list-style: none;
+      padding: 0;
+
+      li {
+        margin: 0.5em 0;
+      }
+    }
+  }
 }
 
 div[class^="iub__"] {
@@ -204,5 +234,13 @@ a {
 @media (max-width: 800px) {
   main > div.section-container {
     display: block;
+  }
+
+  footer {
+    grid-template-columns: 1fr;
+
+    .contact {
+      grid-column: 1 / 2;
+    }
   }
 }
