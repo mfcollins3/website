@@ -122,7 +122,6 @@ main {
   div.section-container.blog {
     display: grid;
     grid-template-columns: 3fr 1fr;
-    gap: 1em;
 
     section.subsections {
       grid-column: 2 / 3;
@@ -136,8 +135,8 @@ main {
 
   div.section-container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1em;
+    grid-template-columns: 2fr 1fr;
+    gap: 2em;
 
     section.blog {
       grid-column: 1 / 2;
@@ -149,6 +148,8 @@ main {
 
     section.bluesky-feed {
       grid-column: 2 / 3;
+      border-left: 1px solid #ccc;
+      padding-left: 1em;
 
       ul {
         list-style: none;
