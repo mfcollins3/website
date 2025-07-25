@@ -2,7 +2,10 @@
     "name": "website",
     "image": "mcr.microsoft.com/devcontainers/base:2.0.3-noble",
     "features": {
-        "ghcr.io/devcontainers/features/git:1": {}
+        "ghcr.io/devcontainers/features/git:1": {},
+        "ghcr.io/devcontainers/features/node:1": {
+            "version": "22.17.1"
+        }
     },
     "forwardPorts": [
         4321
