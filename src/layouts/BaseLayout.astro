@@ -1,0 +1,73 @@
+---
+import FontAwesome from '../components/FontAwesome.astro';
+import Footer from '../components/Footer.astro';
+import GlobalStyles from '../components/GlobalStyles.astro';
+
+interface Props {
+    title: string;
+}
+
+const { title } = Astro.props;
+---
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>{title}</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <FontAwesome />
+        <GlobalStyles />
+    </head>
+    <body>
+        <div class="content">
+            <slot />
+        </div>
+        <footer>
+            <div class="footer">
+                <Footer />
+            </div>
+        </footer>
+    </body>
+</html>
+
+<style>
+body {
+    height: 100dvh;
+}
+
+.content {
+    position: relative;
+    z-index: 1;
+    min-height: 100dvh;
+    background: white;
+    box-shadow: 0px 20px 40px #00000010;
+}
+
+footer {
+    position: sticky;
+    bottom: 0;
+    padding-top: 1rem;
+
+    display: grid;
+    grid-template-columns: 1fr minmax(auto, 1136px) 1fr;
+}
+
+.footer {
+    grid-column: 2 / 3;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 2rem;
+}
+
+@media (max-width: 500px) {
+    footer {
+        display: block;
+        margin: 0 1rem;
+    }
+
+    .footer {
+        display: block;
+    }
+}
+</style>

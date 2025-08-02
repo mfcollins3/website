@@ -1,0 +1,28 @@
+---
+import FooterLegalSection from './FooterLegalSection.astro';
+import FooterLinksSection from './FooterLinksSection.astro';
+import FooterContactSection from './FooterContactSection.astro';
+---
+<div class="legal">
+    <FooterLegalSection />
+</div>
+<div class="links">
+    <FooterLinksSection />
+</div>
+<div class="contact">
+    <FooterContactSection />
+</div>
+
+<style>
+@media (max-width: 500px) {
+    .links {
+        display: none;
+    }
+
+    .contact {
+        margin: 1rem 0;
+        padding: 1rem 0;
+        border-top: 1px solid #ccc;
+    }
+})
+</style>
