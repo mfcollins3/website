@@ -1,8 +1,9 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro"
+import CoverImageLayout from "../layouts/CoverImageLayout.astro"
 
 const title = "Michael F. Collins, III";
+const coverImage = "/cover.jpg";
 ---
-<BaseLayout title={title}>
+<CoverImageLayout title={title} coverImage={coverImage}>
 	<h1>{title}</h1>
-</BaseLayout>
+</CoverImageLayout>

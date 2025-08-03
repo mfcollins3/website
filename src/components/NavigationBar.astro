@@ -1,0 +1,92 @@
+---
+---
+<nav>
+    <h1>Michael F. Collins, III</h1>
+    <div class="links">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/blog">Blog</a></li>
+            <li><a href="/projects">Projects</a></li>
+            <li><a href="/resume">Resume</a></li>
+            <li><a href="/recipes">Recipes</a></li>
+        </ul>
+        <ul>
+            <li><a href="https://github.com/mfcollins3" target="_blank"><i class="fa-brands fa-github"></i></a> <span><a href="https://github.com/mfcollins3" target="_blank">GitHub</a></span></li>
+            <li><a href="https://www.linkedin.com/in/michaelfcollins3/" target="_blank"><i class="fa-brands fa-linkedin"></i></a> <span><a href="https://www.linkedin.com/in/michaelfcollins3/" target="_blank">LinkedIn</a></span></li>
+            <li><a href="https://bsky.app/profile/mfcollins3.bsky.social" target="_blank"><i class="fa-brands fa-bluesky"></i></a> <span><a href="https://bsky.app/profile/mfcollins3.bsky.social" target="_blank">BlueSky</a></span></li>
+            <li><a href="https://www.youtube.com/@mfcollins3" target="_blank"><i class="fa-brands fa-youtube"></i></a> <span><a href="https://www.youtube.com/@mfcollins3" target="_blank">YouTube</a></span></li>
+            <li><a href="https://medium.com/@mfcollins3" target="_blank"><i class="fa-brands fa-medium"></i></a> <span><a href="https://medium.com/@mfcollins3" target="_blank">Medium</a></span></li>
+        </ul>
+        <div class="menu-button">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+    </div>
+</nav>
+
+<style>
+    nav {
+        background-color: rgba(210, 210, 210, 0.5);
+        backdrop-filter: blur(50px);
+        height: 4rem;
+        border-radius: 2rem;
+        align-items: center;
+        padding: 0 1rem;
+
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .links {
+        display: flex;
+        gap: 2rem;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        gap: 1rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+        font-weight: 500;
+        color: white;
+    }
+
+    li {
+        font-weight: 400;
+        font-size: 1rem;
+    }
+
+    a, a:visited {
+        color: black;
+    }
+
+    span {
+        display: none;
+    }
+
+    .menu-button {
+        display: none;
+    }
+
+    @media (max-width: 1070px) {
+        ul {
+            display: none;
+        }
+
+        .menu-button {
+            display: block;
+        }
+    }
+
+    @media (max-width: 500px) {
+        nav {
+            background: linear-gradient(to bottom, #FCA053, #835629);
+            border-radius: 0;
+            background-filter: none;
+        }
+    }
+</style>

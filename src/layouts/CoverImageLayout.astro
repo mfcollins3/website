@@ -1,0 +1,30 @@
+---
+import BaseLayout from './BaseLayout.astro';
+
+interface Props {
+    title: string;
+    coverImage: string;
+}
+
+const { title, coverImage } = Astro.props;
+---
+<BaseLayout title={title}>
+    <header style={{ backgroundImage: `url(${coverImage})` }}>
+    </header>
+    <slot />
+</BaseLayout>
+
+<style>
+    header {
+        height: 496px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    @media (max-width: 502px) {
+        header {
+            display: none;
+        }
+    }
+</style>
