@@ -1,9 +1,11 @@
 ---
+import { getImage } from "astro:assets";
 import CoverImageLayout from "../layouts/CoverImageLayout.astro"
+import coverImage from "./_cover.jpg";
 
 const title = "Michael F. Collins, III";
-const coverImage = "/cover.jpg";
+const optimizedCoverImage = await getImage({src: coverImage, format: "jpeg"});
 ---
-<CoverImageLayout title={title} coverImage={coverImage}>
+<CoverImageLayout title={title} coverImage={optimizedCoverImage.src}>
 	<h1>{title}</h1>
 </CoverImageLayout>
