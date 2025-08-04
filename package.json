@@ -9,6 +9,7 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/mdx": "^4.3.3",
     "@fontsource/poppins": "^5.2.6",
     "astro": "^5.12.8",
     "astro-iubenda": "^0.4.1"

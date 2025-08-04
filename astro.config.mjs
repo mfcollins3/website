@@ -1,6 +1,7 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import iubenda from 'astro-iubenda';
+import mdx from '@astrojs/mdx';
 
 // https://astro.build/config
 export default defineConfig({
@@ -15,6 +16,7 @@ export default defineConfig({
                     lang: 'en',
                 },
             }
-        })
+        }),
+        mdx(),
     ]
 });

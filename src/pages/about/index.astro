@@ -1,0 +1,17 @@
+---
+import CoverImageLayout from '../../layouts/CoverImageLayout.astro';
+import { getImage } from 'astro:assets';
+import coverImage from './_cover.jpg';
+import '../../styles/PageStyles.css';
+
+const title = 'About Me';
+
+const optimizedCoverImage = await getImage({src: coverImage, format: 'webp'});
+---
+<CoverImageLayout title={title} coverImage={optimizedCoverImage.src}>
+    <main>
+        <article>
+            <h1>{title}</h1>
+        </article>
+    </main>
+</CoverImageLayout>

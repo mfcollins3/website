@@ -2,10 +2,16 @@
 import { getImage } from "astro:assets";
 import CoverImageLayout from "../layouts/CoverImageLayout.astro"
 import coverImage from "./_cover.jpg";
+import { Content as Introduction } from "../home/introduction.md";
+import '../styles/PageStyles.css';
 
 const title = "Michael F. Collins, III";
 const optimizedCoverImage = await getImage({src: coverImage, format: "jpeg"});
 ---
 <CoverImageLayout title={title} coverImage={optimizedCoverImage.src}>
-	<h1>{title}</h1>
+	<main>
+		<div class="container">
+			<Introduction />
+		</div>
+	</main>
 </CoverImageLayout>

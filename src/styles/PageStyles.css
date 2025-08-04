@@ -1,0 +1,25 @@
+main {
+    display: grid;
+    grid-template-columns: 1fr minmax(auto, 1136px) 1fr;
+}
+
+article, div.container {
+    grid-column: 2 / 3;
+    margin: 1rem 0;
+}
+
+h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin: 1rem 0;
+}
+
+p {
+    margin: 1rem 0;
+}
+
+@media (max-width: 1136px) {
+    main {
+        margin: 0 1rem;
+    }
+}
