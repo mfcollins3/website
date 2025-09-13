@@ -1,0 +1,21 @@
+{
+    "name": "website",
+    "image": "mcr.microsoft.com/vscode/devcontainers/base:2.0.4-noble",
+    "features": {
+        "ghcr.io/devcontainers/features/git:1": {},
+        "ghcr.io/devcontainers/features/node:1": {
+            "version": "24.8.0"
+        }
+    },
+    "remoteUser": "vscode",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "astro-build.astro-vscode"
+            ],
+            "settings": {
+                "editor.rulers": [80, 120]
+            }
+        }
+    }
+}
