@@ -17,5 +17,8 @@
                 "editor.rulers": [80, 120]
             }
         }
-    }
+    },
+    "forwardPorts": [
+        4321
+    ]
 }
