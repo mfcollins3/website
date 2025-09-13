@@ -1,7 +1,24 @@
 {
-  "name": "website",
+  "name": "@mfcollins3/website",
   "type": "module",
-  "version": "0.0.1",
+  "version": "1.0.0",
+  "description": "This package implements the personal website of Michael F. Collins, III, where I publish content related to my professional interests in software engineering and computer science topics.",
+  "keywords": [
+    "astro",
+    "blog",
+    "website"
+  ],
+  "homepage": "https://michaelfcollins3.dev",
+  "bugs": {
+    "email": "mfcollins3@me.com",
+    "url": "https://github.com/mfcollins3/website/issues"
+  },
+  "license": "MIT",
+  "author": {
+    "email": "mfcollins3@me.com",
+    "name": "Michael Collins",
+    "url": "https://michaelfcollins3.dev"
+  },
   "scripts": {
     "dev": "astro dev --host 0.0.0.0",
     "build": "astro build",
@@ -10,5 +27,21 @@
   },
   "dependencies": {
     "astro": "^5.13.7"
-  }
+  },
+  "devDependencies": {},
+  "engines": {
+    "node": "24.8.0"
+  },
+  "devEngines": {
+    "packageManager": {
+      "name": "npm",
+      "onFail": "warn"
+    },
+    "runtime": {
+      "name": "node",
+      "onFail": "warn",
+      "version": "24.8.0"
+    }
+  },
+  "private": true
 }
