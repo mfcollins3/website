@@ -1,0 +1,174 @@
+---
+---
+<nav>
+    <h1><a href="/"><span class="long-brand">Michael F. Collins, III</span><span class="short-brand">MFC3</span></a></h1>
+    <input type="checkbox" id="menu-toggle" class="menu-toggle" />
+    <div class="links">
+        <ul class="main-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/blog">Blog</a></li>
+            <li><a href="/projects">Projects</a></li>
+            <li><a href="/resume">Resume</a></li>
+            <li><a href="/recipes">Recipes</a></li>
+        </ul>
+        <ul class="social-links">
+            <li><a href="https://github.com/mfcollins3" target="_blank"><i class="fa-brands fa-github"></i></a> <span><a href="https://github.com/mfcollins3" target="_blank">GitHub</a></span></li>
+            <li><a href="https://www.linkedin.com/in/michaelfcollins3/" target="_blank"><i class="fa-brands fa-linkedin"></i></a> <span><a href="https://www.linkedin.com/in/michaelfcollins3/" target="_blank">LinkedIn</a></span></li>
+            <li><a href="https://bsky.app/profile/mfcollins3.bsky.social" target="_blank"><i class="fa-brands fa-bluesky"></i></a> <span><a href="https://bsky.app/profile/mfcollins3.bsky.social" target="_blank">BlueSky</a></span></li>
+            <li><a href="https://www.youtube.com/@mfcollins3" target="_blank"><i class="fa-brands fa-youtube"></i></a> <span><a href="https://www.youtube.com/@mfcollins3" target="_blank">YouTube</a></span></li>
+            <li><a href="https://medium.com/@mfcollins3" target="_blank"><i class="fa-brands fa-medium"></i></a> <span><a href="https://medium.com/@mfcollins3" target="_blank">Medium</a></span></li>
+        </ul>
+    </div>
+    <label for="menu-toggle" class="menu-button">
+        <i class="fa-solid fa-bars" id="menu-icon"></i>
+        <i class="fa-solid fa-xmark" id="close-icon"></i>
+    </div>
+</nav>
+
+<style>
+    nav {
+        background-color: rgba(210, 210, 210, 0.5);
+        backdrop-filter: blur(50px);
+        height: 4rem;
+        border-radius: 2rem;
+        align-items: center;
+        padding: 0 1rem;
+
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .short-brand {
+        display: none;
+    }
+
+    .links {
+        display: flex;
+        gap: 1rem;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        gap: 1rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+        font-weight: 500;
+        color: white;
+        
+        a, a:visited {
+            text-decoration: none;
+            color: white;
+        }
+    }
+
+    li {
+        font-weight: 400;
+        font-size: 1rem;
+
+        a, a:visited {
+            color: black;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: white;
+            cursor: pointer;
+        }
+    }
+
+    .social-links span {
+        display: none;
+    }
+
+    .menu-button {
+        display: none;
+    }
+
+    #menu-toggle {
+        display: none;
+    }
+
+    @media (max-width: 1070px) {
+        .menu-button {
+            display: block;
+
+            #close-icon {
+                display: none;
+            }
+        }
+
+        #menu-toggle:checked ~ .menu-button #menu-icon {
+            display: none;
+        }
+
+        #menu-toggle:checked ~ .menu-button #close-icon {
+            display: block;
+        }
+
+        .links {
+            position: absolute;
+            top: 4rem;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+            height: 0;
+            border-radius: 0 0 1rem 1rem;
+            overflow: hidden;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+
+            transition: 0.3s ease;
+        }
+
+        .links ul:first-child {
+            padding: 1rem 0;
+        }
+
+        #menu-toggle:checked ~ .links {
+            height: 20rem;
+            background-color: rgba(210, 210, 210, 0.8);
+            backdrop-filter: blur(50px);
+        }
+
+        .main-links {
+            flex-direction: column;
+        }
+
+        .main-links li {
+            width: 100%;
+        }
+    }
+
+    @media (max-width: 500px) {
+        nav {
+            background: linear-gradient(to bottom, #FCA053, #835629);
+            border-radius: 0;
+            background-filter: none;
+        }
+
+        .long-brand {
+            display: none;
+        }
+
+        .short-brand {
+            display: inline;
+        }
+
+        .links {
+            left: 0;
+            width: 100%;
+            transform: none;
+            background-color: rgba(210, 210, 210, 1.0);
+        }
+    }
+</style>
