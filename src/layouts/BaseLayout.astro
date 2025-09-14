@@ -1,0 +1,58 @@
+---
+import type { ImageMetadata } from "astro";
+import GlobalStyles from "../components/GlobalStyles.astro";
+import CoverImage from "../components/CoverImage.astro";
+
+interface Props {
+    title: string;
+    desktopCoverImageURL?: string | ImageMetadata;
+    mobileCoverImageURL?: string | ImageMetadata;
+}
+
+const { title, desktopCoverImageURL, mobileCoverImageURL } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>{title}</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <GlobalStyles />
+    </head>
+    <body>
+        <header>
+            {desktopCoverImageURL && (
+                <CoverImage
+                    mobileImageURL={mobileCoverImageURL || desktopCoverImageURL}
+                    desktopImageURL={desktopCoverImageURL}
+                    alt="Cover Image"
+                />
+            )}
+        </header>
+        <main>
+            <div class="content">
+                <slot />
+            </div>
+        </main>
+        <footer />
+    </body>
+</html>
+
+<style>
+    main {
+        display: grid;
+        grid-template-columns: 1fr 1136px 1fr;
+    }
+
+    .content {
+        grid-column: 2 / 3;
+    }
+
+    @media (max-width: 1136px) {
+        main {
+            grid-template-columns: 32px 1fr 32px;
+        }
+    }
+</style>

@@ -1,16 +1,9 @@
 ---
-
+import BaseLayout from "../layouts/BaseLayout.astro"
+import coverImage from "./cover.jpg";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout title="Michael F. Collins, III" desktopCoverImageURL={coverImage}>
+	<h1>Welcome to my Website!</h1>
+	<p>TODO: welcome message</p>
+</BaseLayout>
