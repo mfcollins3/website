@@ -1,5 +1,6 @@
 ---
 import NavigationBar from '../components/navigation_bar/NavigationBar.astro';
+import Hero from '../components/Hero.astro';
 import '../styles/styles.css';
 ---
 
@@ -20,6 +21,9 @@ import '../styles/styles.css';
 		<nav>
 			<NavigationBar />
 		</nav>
+		<div class="content">
+			<Hero />
+		</div>
 	</body>
 </html>
 
@@ -29,5 +33,9 @@ import '../styles/styles.css';
 		top: 0;
 		z-index: 100;
 		width: 100%;
+	}
+
+	.content {
+		margin-top: 5rem;
 	}
 </style>

@@ -1,0 +1,67 @@
+---
+---
+
+<div class="hero">
+    <div class="container">
+        <div class="welcome">
+            <h1>Welcome to My Website</h1>
+            <p>
+                Explore the depths of software engineering and architecture, best practices, and emerging technologies with me. Join me as I walk you through what I am learning, the experiences that I am gaining, and share with you technical deep dives in how to build applications around different technologies.
+            </p>
+        </div>
+    </div>
+</div>
+
+<style>
+    .hero {
+        height: 26rem;
+        background: linear-gradient(to bottom right, rgba(3, 2, 19, 1), rgba(3, 2, 19, 0.8));
+        display: grid;
+        grid-template-columns: 1fr 75rem 1fr;
+    }
+
+    .container {
+        grid-column: 2 / 3;
+        padding: 1rem;
+        width: 46.25rem;
+        margin: 0 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .welcome {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .welcome h1 {
+        color: white;
+        font-size: 3rem;
+        font-weight: 400;
+        line-height: 3rem;
+        letter-spacing: 0.35px;
+        margin: 0;
+    }
+
+    .welcome p {
+        color: white;
+        margin: 0;
+        font-size: 1.25rem;
+        line-height: 1.75rem;
+        letter-spacing: -0.45px;
+    }
+
+    @media (max-width: 470px) {
+        .hero {
+            display: block;
+            height: auto;
+        }
+
+        .container {
+            width: 100%;
+            margin: 0;
+        }
+    }
+</style>
