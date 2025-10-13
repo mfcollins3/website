@@ -1,0 +1,136 @@
+---
+import { Image } from 'astro:assets';
+import TagList from './TagList.astro';
+import Tag from './Tag.astro';
+import coverImage from './cover.jpg';
+---
+
+<div class="featured-article">
+    <div class="container">
+        <header>
+            <h1>Featured Article</h1>
+            <p>Don't miss this in-depth exploration</p>
+        </header>
+        <article>
+            <div class="article-summary">
+                <TagList>
+                    <Tag title="Microservices" href="#"/>
+                    <Tag title="Architecture" href="#"/>
+                    <Tag title="Distributed Systems" href="#"/>
+                </TagList>
+                <h1><a href="#">Building Scalable Microservices: Lessons from the Trenches</a></h1>
+                <time><i class="fa-regular fa-calendar"></i> October 12, 2025</time>
+                <p>
+                    After years of building distributed systems, I've learned that successful microservices architecture isn't just about splitting code into small pieces. It's about understanding domain boundaries, managing data consistency, and creating resilient communication patterns. In this deep-dive, I share practical lessons, common pitfalls, and battle-tested strategies for building microservices that actually scale.
+                </p>
+                <div class="read-full-article">
+                    <a href="#">Read Full Article <i class="fa-regular fa-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="cover-image">
+                <Image src={coverImage} alt="Cover Image" />
+            </div>
+        </article>
+    </div>
+</div>
+
+<style>
+    .featured-article {
+        display: grid;
+        grid-template-columns: 1fr 75rem 1fr;
+    }
+
+    .container {
+        grid-column: 2 / 3;
+        margin: 2rem 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+
+        header {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+
+            h1 {
+                font-weight: 500;
+                font-size: 1.875rem;
+                line-height: 2rem;
+                letter-spacing: 0.4px;
+                margin: 0;
+            }
+
+            p {
+                margin: 0;
+                line-height: 1.5rem;
+                letter-spacing: -0.31px;
+            }
+        }
+
+        article {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+
+            .article-summary {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+
+                h1 {
+                    font-weight: 400;
+                    font-size: 2rem;
+                    line-height: 2.5rem;
+                    letter-spacing: 0.37px;
+                    margin: 0;
+
+                    a, a:visited {
+                        text-decoration: none;
+                        color: black;
+                    }
+                }
+
+                time {
+                    font-weight: 400;
+                    font-size: 0.875rem;
+                    line-height: 1.25rem;
+                    letter-spacing: -0.15px;
+                    color: #717182;
+                }
+
+                p {
+                    font-weight: regular;
+                    font-size: 1.125rem;
+                    line-height: 1.75rem;
+                    letter-spacing: -0.44px;
+                    margin: 0;
+                }
+
+                .read-full-article {
+                    font-size: 1rem;
+                    font-weight: 400;
+                    line-height: 1.5rem;
+                    letter-spacing: -0.31px;
+                    padding: 0.75rem 2rem;
+                    background-color: #030213;
+                    border-radius: 0.625rem;
+                    width: fit-content;
+
+                    a, a:visited {
+                        text-decoration: none;
+                        color: white;
+                    }
+                }
+            }
+
+            .cover-image img {
+                border-radius: 0.875em;
+                width: 100%;
+                height: auto;
+                display: block;
+                overflow: hidden;
+            }
+        }
+    }
+</style>

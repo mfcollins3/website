@@ -1,6 +1,7 @@
 ---
 import NavigationBar from '../components/navigation_bar/NavigationBar.astro';
 import Hero from '../components/Hero.astro';
+import FeaturedArticle from '../components/FeaturedArticle.astro';
 import '../styles/styles.css';
 ---
 
@@ -18,17 +19,18 @@ import '../styles/styles.css';
 		<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 	</head>
 	<body>
-		<nav>
+		<nav class="navigation-bar">
 			<NavigationBar />
 		</nav>
 		<div class="content">
 			<Hero />
+			<FeaturedArticle />
 		</div>
 	</body>
 </html>
 
 <style>
-	nav {
+	.navigation-bar {
 		position: fixed;
 		top: 0;
 		z-index: 100;
@@ -37,5 +39,6 @@ import '../styles/styles.css';
 
 	.content {
 		margin-top: 5rem;
+		z-index: 0;
 	}
 </style>
