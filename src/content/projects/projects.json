@@ -1,0 +1,37 @@
+[
+  {
+    "id": "cloud-infra-manager",
+    "title": "Cloud Infrastructure Manager",
+    "description": "A comprehensive tool for managing cloud infrastructure across multiple providers with automated deployment and monitoring capabilities.",
+    "thumbnail": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600",
+    "githubUrl": "https://github.com/mfcollins3/cloud-infra-manager",
+    "websiteUrl": "https://cloud-manager.example.com",
+    "technologies": ["Go", "Kubernetes", "Terraform"]
+  },
+  {
+    "id": "analytics-dashboard",
+    "title": "Real-time Analytics Dashboard",
+    "description": "Interactive dashboard for visualizing real-time data streams with customizable widgets and alerting system.",
+    "thumbnail": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600",
+    "githubUrl": "https://github.com/mfcollins3/analytics-dashboard",
+    "websiteUrl": "https://analytics.example.com",
+    "technologies": ["React", "TypeScript", "WebSocket"]
+  },
+  {
+    "id": "task-queue",
+    "title": "Distributed Task Queue",
+    "description": "High-performance distributed task queue system for processing background jobs at scale.",
+    "thumbnail": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600",
+    "githubUrl": "https://github.com/mfcollins3/task-queue",
+    "technologies": ["Python", "Redis", "RabbitMQ"]
+  },
+  {
+    "id": "api-gateway",
+    "title": "API Gateway Framework",
+    "description": "Lightweight and extensible API gateway framework with built-in rate limiting, authentication, and monitoring.",
+    "thumbnail": "https://images.unsplash.com/photo-1516116216624-53e697fedbea?w=600",
+    "githubUrl": "https://github.com/mfcollins3/api-gateway",
+    "websiteUrl": "https://gateway-docs.example.com",
+    "technologies": ["Node.js", "Express", "Docker"]
+  }
+]

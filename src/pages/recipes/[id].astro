@@ -1,0 +1,118 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const recipes = await getCollection('recipes');
+  return recipes.map((recipe) => ({
+    params: { id: recipe.id },
+    props: { recipe },
+  }));
+}
+
+const { recipe } = Astro.props;
+---
+
+<BaseLayout
+  title={`${recipe.data.title} | Recipes | Michael F. Collins, III`}
+  description={recipe.data.description}
+>
+  <div class="min-h-screen bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <a
+        href="/recipes"
+        class="inline-flex items-center gap-2 text-[#87ceeb] hover:text-[#87ceeb]/80 mb-8 transition-colors duration-200"
+      >
+        ← Back to Recipes
+      </a>
+
+      <article class="bg-white rounded-lg shadow-md overflow-hidden">
+        <!-- Header Image -->
+        {recipe.data.image && (
+          <div class="relative h-96 overflow-hidden">
+            <img
+              src={recipe.data.image}
+              alt={recipe.data.title}
+              class="w-full h-full object-cover"
+            />
+          </div>
+        )}
+
+        <div class="p-8 md:p-12">
+          <h1 class="text-4xl font-bold text-gray-900 mb-4">{recipe.data.title}</h1>
+          <p class="text-xl text-gray-600 mb-6">{recipe.data.description}</p>
+
+          <!-- Recipe Info -->
+          <div class="flex flex-wrap gap-6 mb-8 pb-8 border-b border-gray-200">
+            <div class="flex items-center gap-2 text-gray-700">
+              <svg class="w-5 h-5 text-[#87ceeb]" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+              </svg>
+              <div>
+                <div class="text-sm text-gray-600">Prep Time</div>
+                <div class="font-semibold">{recipe.data.prepTime} min</div>
+              </div>
+            </div>
+            <div class="flex items-center gap-2 text-gray-700">
+              <svg class="w-5 h-5 text-[#87ceeb]" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+              </svg>
+              <div>
+                <div class="text-sm text-gray-600">Cook Time</div>
+                <div class="font-semibold">{recipe.data.cookTime} min</div>
+              </div>
+            </div>
+            <div class="flex items-center gap-2 text-gray-700">
+              <svg class="w-5 h-5 text-[#87ceeb]" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+              </svg>
+              <div>
+                <div class="text-sm text-gray-600">Total Time</div>
+                <div class="font-semibold">{recipe.data.prepTime + recipe.data.cookTime} min</div>
+              </div>
+            </div>
+            <div class="flex items-center gap-2 text-gray-700">
+              <svg class="w-5 h-5 text-[#87ceeb]" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/>
+              </svg>
+              <div>
+                <div class="text-sm text-gray-600">Servings</div>
+                <div class="font-semibold">{recipe.data.servings}</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-8">
+            <!-- Ingredients -->
+            <div>
+              <h2 class="text-2xl font-semibold text-gray-900 mb-4">Ingredients</h2>
+              <ul class="space-y-2">
+                {recipe.data.ingredients.map((ingredient: string) => (
+                  <li class="flex items-start gap-3">
+                    <span class="w-2 h-2 bg-[#87ceeb] rounded-full mt-2 flex-shrink-0"></span>
+                    <span class="text-gray-700">{ingredient}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <!-- Instructions -->
+            <div>
+              <h2 class="text-2xl font-semibold text-gray-900 mb-4">Instructions</h2>
+              <ol class="space-y-4">
+                {recipe.data.instructions.map((instruction: string, index: number) => (
+                  <li class="flex gap-3">
+                    <span class="flex-shrink-0 w-6 h-6 bg-[#87ceeb] text-gray-900 rounded-full flex items-center justify-center text-sm font-semibold">
+                      {index + 1}
+                    </span>
+                    <span class="text-gray-700 pt-0.5">{instruction}</span>
+                  </li>
+                ))}
+              </ol>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</BaseLayout>

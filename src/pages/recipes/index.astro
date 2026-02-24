@@ -1,0 +1,62 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const recipes = await getCollection('recipes');
+---
+
+<BaseLayout
+  title="Recipes | Michael F. Collins, III"
+  description="Some of my favorite recipes that I love to cook and share with friends and family."
+>
+  <div class="min-h-screen bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <h1 class="text-4xl font-bold text-gray-900 mb-4">Recipes</h1>
+      <p class="text-xl text-gray-600 mb-12">
+        Some of my favorite recipes that I love to cook and share with friends and family.
+      </p>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {recipes.map((recipe) => (
+          <a href={`/recipes/${recipe.id}`} class="block group">
+            <article class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300 h-full">
+              {recipe.data.image && (
+                <div class="relative h-64 overflow-hidden">
+                  <img
+                    src={recipe.data.image}
+                    alt={recipe.data.title}
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    loading="lazy"
+                  />
+                </div>
+              )}
+
+              <div class="p-6">
+                <h2 class="text-xl font-semibold text-gray-900 mb-3 group-hover:text-[#87ceeb] transition-colors duration-200">
+                  {recipe.data.title}
+                </h2>
+
+                <p class="text-gray-600 mb-4 line-clamp-2">{recipe.data.description}</p>
+
+                <div class="flex items-center gap-4 text-sm text-gray-600">
+                  <span class="flex items-center gap-1">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+                    </svg>
+                    {recipe.data.prepTime + recipe.data.cookTime} min
+                  </span>
+                  <span class="flex items-center gap-1">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                    </svg>
+                    {recipe.data.servings} servings
+                  </span>
+                </div>
+              </div>
+            </article>
+          </a>
+        ))}
+      </div>
+    </div>
+  </div>
+</BaseLayout>

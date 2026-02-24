@@ -1,17 +1,80 @@
 ---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import BlogPostCard from '../components/BlogPostCard.astro';
+import { getCollection } from 'astro:content';
 
+const allPosts = await getCollection('blog');
+const sortedPosts = allPosts.sort(
+  (a, b) => b.data.publishedDate.getTime() - a.data.publishedDate.getTime()
+);
+
+const featuredPost = sortedPosts.find((post) => post.data.isFeatured);
+const featuredCategory = 'Software Architecture';
+const categoryPosts = sortedPosts
+  .filter((post) => post.data.categories.includes(featuredCategory))
+  .slice(0, 5);
+const recentPosts = sortedPosts.slice(0, 6);
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout title="Michael F. Collins, III - Software Developer & Architect">
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-br from-[#87ceeb]/20 via-white to-[#e0f2fe]/30 py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto">
+        <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+          Welcome to My Corner of the Web
+        </h1>
+        <p class="text-xl text-gray-700 mb-8">
+          Software developer and architect with 30+ years of experience sharing insights
+          on software development, architecture, and computer science.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Post -->
+  {featuredPost && (
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <h2 class="text-3xl font-bold text-gray-900 mb-8">Featured Article</h2>
+      <BlogPostCard post={featuredPost} featured />
+    </section>
+  )}
+
+  <!-- Featured Category -->
+  {categoryPosts.length > 0 && (
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <h2 class="text-3xl font-bold text-gray-900 mb-8">
+        Featured Topic: {featuredCategory}
+      </h2>
+      <div class="grid md:grid-cols-2 gap-8 mb-8">
+        {categoryPosts[0] && <BlogPostCard post={categoryPosts[0]} />}
+        {categoryPosts[1] && <BlogPostCard post={categoryPosts[1]} />}
+      </div>
+      {categoryPosts.length > 2 && (
+        <div class="grid md:grid-cols-3 gap-6">
+          {categoryPosts.slice(2, 5).map((post) => (
+            <BlogPostCard post={post} />
+          ))}
+        </div>
+      )}
+    </section>
+  )}
+
+  <!-- Recent Posts -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="flex justify-between items-center mb-8">
+      <h2 class="text-3xl font-bold text-gray-900">Recent Articles</h2>
+      <a
+        href="/blog"
+        class="text-[#87ceeb] hover:text-[#87ceeb]/80 font-medium transition-colors duration-200"
+      >
+        View All →
+      </a>
+    </div>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {recentPosts.map((post) => (
+        <BlogPostCard post={post} />
+      ))}
+    </div>
+  </section>
+</BaseLayout>

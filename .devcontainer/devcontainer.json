@@ -21,7 +21,18 @@
                 "DavidAnson.vscode-markdownlint",
                 "tamasfe.even-better-toml"
             ],
+            "mcp": {
+                "inputs": [],
+                "servers": {
+                    "figma": {
+                        "url": "https://mcp.figma.com/mcp",
+                        "type": "http"
+                    }
+                }
+            },
             "settings": {
+                "css.validate": false,
+                "scss.validate": false,
                 "terminal.integrated.fontFamily": "MesloLGM Nerd Font"
             }
         }

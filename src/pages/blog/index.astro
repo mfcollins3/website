@@ -1,0 +1,109 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BlogPostCard from '../../components/BlogPostCard.astro';
+import { getCollection } from 'astro:content';
+
+const allPosts = await getCollection('blog');
+const sortedPosts = allPosts.sort(
+  (a, b) => b.data.publishedDate.getTime() - a.data.publishedDate.getTime()
+);
+
+// Archive: unique years
+const years = [...new Set(
+  sortedPosts.map((p) => p.data.publishedDate.getFullYear())
+)].sort((a, b) => b - a);
+
+const yearCounts = Object.fromEntries(
+  years.map((year) => [
+    year,
+    sortedPosts.filter((p) => p.data.publishedDate.getFullYear() === year).length,
+  ])
+);
+
+// Pagination
+const POSTS_PER_PAGE = 10;
+const page = Number(Astro.url.searchParams.get('page') ?? '1');
+const totalPages = Math.ceil(sortedPosts.length / POSTS_PER_PAGE);
+const currentPosts = sortedPosts.slice((page - 1) * POSTS_PER_PAGE, page * POSTS_PER_PAGE);
+---
+
+<BaseLayout
+  title="Blog | Michael F. Collins, III"
+  description="Articles on software development, architecture, and computer science."
+>
+  <div class="min-h-screen bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div class="flex flex-col lg:flex-row gap-8">
+        <!-- Main Content -->
+        <div class="lg:w-3/4">
+          <h1 class="text-4xl font-bold text-gray-900 mb-8">Blog</h1>
+
+          <div class="space-y-6">
+            {currentPosts.map((post) => (
+              <BlogPostCard post={post} />
+            ))}
+          </div>
+
+          <!-- Pagination -->
+          {totalPages > 1 && (
+            <div class="mt-12 flex items-center justify-center gap-2">
+              {page > 1 && (
+                <a
+                  href={`/blog?page=${page - 1}`}
+                  class="px-4 py-2 rounded-lg bg-white border border-gray-300 text-gray-700 hover:bg-gray-50 transition-colors duration-200"
+                  aria-label="Previous page"
+                >
+                  ←
+                </a>
+              )}
+
+              {Array.from({ length: totalPages }, (_, i) => i + 1).map((p) => (
+                <a
+                  href={`/blog?page=${p}`}
+                  class={`px-4 py-2 rounded-lg border transition-colors duration-200 ${
+                    page === p
+                      ? 'bg-[#87ceeb] text-gray-900 border-[#87ceeb]'
+                      : 'bg-white border-gray-300 text-gray-700 hover:bg-gray-50'
+                  }`}
+                  aria-current={page === p ? 'page' : undefined}
+                >
+                  {p}
+                </a>
+              ))}
+
+              {page < totalPages && (
+                <a
+                  href={`/blog?page=${page + 1}`}
+                  class="px-4 py-2 rounded-lg bg-white border border-gray-300 text-gray-700 hover:bg-gray-50 transition-colors duration-200"
+                  aria-label="Next page"
+                >
+                  →
+                </a>
+              )}
+            </div>
+          )}
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="lg:w-1/4">
+          <div class="bg-white rounded-lg shadow-md p-6 sticky top-24">
+            <h2 class="text-xl font-semibold text-gray-900 mb-4">Archive</h2>
+            <ul class="space-y-2">
+              {years.map((year) => (
+                <li>
+                  <a
+                    href={`/blog/${year}`}
+                    class="text-gray-700 hover:text-[#87ceeb] transition-colors duration-200 flex items-center justify-between"
+                  >
+                    <span>{year}</span>
+                    <span class="text-sm text-gray-500">({yearCounts[year]})</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </div>
+</BaseLayout>

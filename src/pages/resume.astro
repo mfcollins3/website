@@ -1,0 +1,183 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Resume | Michael F. Collins, III"
+  description="Resume of Michael F. Collins, III — software developer and architect with over 30 years of experience."
+>
+  <div class="min-h-screen bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div class="bg-white rounded-lg shadow-md p-8 md:p-12">
+        <!-- Header -->
+        <header class="border-b border-gray-200 pb-8 mb-8">
+          <h1 class="text-4xl font-bold text-gray-900 mb-2">Michael F. Collins, III</h1>
+          <p class="text-xl text-gray-600 mb-4">Software Developer & Software Architect</p>
+          <div class="flex flex-wrap gap-4 text-sm text-gray-600">
+            <a href="mailto:mfcollins3@me.com" class="hover:text-[#87ceeb] transition-colors">
+              mfcollins3@me.com
+            </a>
+            <a
+              href="https://github.com/mfcollins3"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="hover:text-[#87ceeb] transition-colors"
+            >
+              github.com/mfcollins3
+            </a>
+            <a
+              href="https://www.linkedin.com/in/michaelfcollins3/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="hover:text-[#87ceeb] transition-colors"
+            >
+              linkedin.com/in/michaelfcollins3
+            </a>
+          </div>
+        </header>
+
+        <!-- Summary -->
+        <section class="mb-10">
+          <h2 class="text-2xl font-semibold text-gray-900 mb-4 flex items-center gap-2">
+            <svg class="w-6 h-6 text-[#87ceeb]" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
+            </svg>
+            Professional Summary
+          </h2>
+          <p class="text-gray-700 leading-relaxed">
+            Accomplished software developer and architect with over 30 years of professional
+            experience designing and implementing scalable, maintainable software solutions.
+            Expert in modern software development practices, cloud-native architectures, and
+            leading technical teams to deliver high-quality products. Proven track record of
+            architecting enterprise-level systems and mentoring development teams.
+          </p>
+        </section>
+
+        <!-- Skills -->
+        <section class="mb-10">
+          <h2 class="text-2xl font-semibold text-gray-900 mb-4 flex items-center gap-2">
+            <svg class="w-6 h-6 text-[#87ceeb]" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
+            </svg>
+            Technical Skills
+          </h2>
+          <div class="grid md:grid-cols-2 gap-6">
+            <div>
+              <h3 class="font-semibold text-gray-900 mb-2">Languages & Frameworks</h3>
+              <p class="text-gray-700 text-sm leading-relaxed">
+                JavaScript, TypeScript, Python, Go, Java, C#, React, Node.js, .NET, Spring Boot
+              </p>
+            </div>
+            <div>
+              <h3 class="font-semibold text-gray-900 mb-2">Cloud & DevOps</h3>
+              <p class="text-gray-700 text-sm leading-relaxed">
+                AWS, Azure, Google Cloud, Docker, Kubernetes, Terraform, CI/CD, Jenkins, GitHub Actions
+              </p>
+            </div>
+            <div>
+              <h3 class="font-semibold text-gray-900 mb-2">Databases</h3>
+              <p class="text-gray-700 text-sm leading-relaxed">
+                PostgreSQL, MySQL, MongoDB, Redis, DynamoDB, SQL Server
+              </p>
+            </div>
+            <div>
+              <h3 class="font-semibold text-gray-900 mb-2">Architecture & Design</h3>
+              <p class="text-gray-700 text-sm leading-relaxed">
+                Microservices, Event-Driven Architecture, Domain-Driven Design, RESTful APIs, GraphQL
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Experience -->
+        <section class="mb-10">
+          <h2 class="text-2xl font-semibold text-gray-900 mb-4 flex items-center gap-2">
+            <svg class="w-6 h-6 text-[#87ceeb]" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+            </svg>
+            Professional Experience
+          </h2>
+
+          <div class="space-y-8">
+            <div>
+              <div class="flex justify-between items-start mb-2">
+                <div>
+                  <h3 class="text-lg font-semibold text-gray-900">Principal Software Architect</h3>
+                  <p class="text-gray-700">Tech Solutions Inc.</p>
+                </div>
+                <span class="text-sm text-gray-600 whitespace-nowrap ml-4">2018 – Present</span>
+              </div>
+              <ul class="list-disc list-inside text-gray-700 space-y-1 ml-4 text-sm">
+                <li>Lead architecture design for cloud-native applications serving millions of users</li>
+                <li>Designed and implemented microservices architecture reducing deployment time by 60%</li>
+                <li>Mentor development teams on best practices and modern software development techniques</li>
+                <li>Established DevOps practices and CI/CD pipelines across the organization</li>
+              </ul>
+            </div>
+
+            <div>
+              <div class="flex justify-between items-start mb-2">
+                <div>
+                  <h3 class="text-lg font-semibold text-gray-900">Senior Software Engineer</h3>
+                  <p class="text-gray-700">Innovation Systems LLC</p>
+                </div>
+                <span class="text-sm text-gray-600 whitespace-nowrap ml-4">2012 – 2018</span>
+              </div>
+              <ul class="list-disc list-inside text-gray-700 space-y-1 ml-4 text-sm">
+                <li>Developed enterprise-level web applications using modern JavaScript frameworks</li>
+                <li>Led migration from monolithic architecture to microservices-based system</li>
+                <li>Implemented automated testing strategies increasing code coverage to 85%</li>
+                <li>Collaborated with product teams to deliver features that increased user engagement by 40%</li>
+              </ul>
+            </div>
+
+            <div>
+              <div class="flex justify-between items-start mb-2">
+                <div>
+                  <h3 class="text-lg font-semibold text-gray-900">Software Developer</h3>
+                  <p class="text-gray-700">Digital Ventures Corp</p>
+                </div>
+                <span class="text-sm text-gray-600 whitespace-nowrap ml-4">2005 – 2012</span>
+              </div>
+              <ul class="list-disc list-inside text-gray-700 space-y-1 ml-4 text-sm">
+                <li>Built and maintained customer-facing web applications and internal tools</li>
+                <li>Designed database schemas and optimized queries for improved performance</li>
+                <li>Participated in code reviews and contributed to team knowledge sharing</li>
+              </ul>
+            </div>
+
+            <div>
+              <div class="flex justify-between items-start mb-2">
+                <div>
+                  <h3 class="text-lg font-semibold text-gray-900">Junior Developer</h3>
+                  <p class="text-gray-700">StartUp Technologies</p>
+                </div>
+                <span class="text-sm text-gray-600 whitespace-nowrap ml-4">1995 – 2005</span>
+              </div>
+              <ul class="list-disc list-inside text-gray-700 space-y-1 ml-4 text-sm">
+                <li>Developed desktop and web applications for various client projects</li>
+                <li>Learned and applied software development best practices</li>
+                <li>Contributed to all phases of the software development lifecycle</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- Education -->
+        <section>
+          <h2 class="text-2xl font-semibold text-gray-900 mb-4 flex items-center gap-2">
+            <svg class="w-6 h-6 text-[#87ceeb]" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 14l9-5-9-5-9 5 9 5z"/><path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"/>
+            </svg>
+            Education
+          </h2>
+          <div>
+            <h3 class="text-lg font-semibold text-gray-900">Bachelor of Science in Computer Science</h3>
+            <p class="text-gray-700">University Name</p>
+            <p class="text-sm text-gray-600">Graduated 1995</p>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+</BaseLayout>

@@ -1,0 +1,66 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import BlogPostCard from '../../../components/BlogPostCard.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const allPosts = await getCollection('blog');
+  const yearMonths = [...new Set(
+    allPosts.map((p) => {
+      const d = p.data.publishedDate;
+      return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}`;
+    })
+  )];
+  return yearMonths.map((ym) => {
+    const [year, month] = ym.split('-');
+    return { params: { year, month } };
+  });
+}
+
+const { year, month } = Astro.params;
+const yearNumber = Number(year);
+const monthNumber = Number(month) - 1; // 0-indexed
+
+const allPosts = await getCollection('blog');
+const monthPosts = allPosts
+  .filter((p) => {
+    const d = p.data.publishedDate;
+    return d.getFullYear() === yearNumber && d.getMonth() === monthNumber;
+  })
+  .sort((a, b) => b.data.publishedDate.getTime() - a.data.publishedDate.getTime());
+
+const monthNames = [
+  'January', 'February', 'March', 'April', 'May', 'June',
+  'July', 'August', 'September', 'October', 'November', 'December',
+];
+
+const monthName = monthNames[monthNumber];
+---
+
+<BaseLayout
+  title={`${monthName} ${year} | Blog | Michael F. Collins, III`}
+  description={`Blog posts from ${monthName} ${year}`}
+>
+  <div class="min-h-screen bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <a
+        href={`/blog/${year}`}
+        class="inline-flex items-center gap-2 text-[#87ceeb] hover:text-[#87ceeb]/80 mb-8 transition-colors duration-200"
+      >
+        ← Back to {year}
+      </a>
+
+      <h1 class="text-4xl font-bold text-gray-900 mb-8">
+        {monthName} {year}
+      </h1>
+
+      <div class="space-y-6">
+        {monthPosts.length > 0 ? (
+          monthPosts.map((post) => <BlogPostCard post={post} />)
+        ) : (
+          <p class="text-gray-600">No posts found for this month.</p>
+        )}
+      </div>
+    </div>
+  </div>
+</BaseLayout>

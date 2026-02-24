@@ -1,0 +1,71 @@
+---
+const currentYear = new Date().getFullYear();
+
+const socialLinks = [
+  { label: 'Email', href: 'mailto:mfcollins3@me.com' },
+  { label: 'GitHub', href: 'https://github.com/mfcollins3' },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/michaelfcollins3/' },
+  { label: 'YouTube', href: 'https://www.youtube.com/@mfcollins3' },
+  { label: 'Facebook', href: 'https://www.facebook.com/mfcollins3' },
+  { label: 'X', href: 'https://x.com/mfcollins3' },
+  { label: 'Instagram', href: 'https://www.instagram.com/mfcollins3/' },
+  { label: 'Threads', href: 'https://www.threads.com/@mfcollins3' },
+  { label: 'Bluesky', href: 'https://bsky.app/profile/mfcollins3.bsky.social' },
+];
+---
+
+<footer class="bg-gray-50 border-t border-gray-200 mt-auto">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- About Section -->
+      <div>
+        <h3 class="text-lg font-semibold text-gray-900 mb-4">Michael F. Collins, III</h3>
+        <p class="text-gray-600 text-sm">
+          Software developer and architect with over 30 years of professional experience,
+          sharing insights on software development and computer science.
+        </p>
+      </div>
+
+      <!-- Quick Links -->
+      <div>
+        <h3 class="text-lg font-semibold text-gray-900 mb-4">Quick Links</h3>
+        <ul class="space-y-2 text-sm">
+          {[
+            { label: 'About', href: '/about' },
+            { label: 'Blog', href: '/blog' },
+            { label: 'Projects', href: '/projects' },
+            { label: 'Resume', href: '/resume' },
+            { label: 'Recipes', href: '/recipes' },
+          ].map((link) => (
+            <li>
+              <a href={link.href} class="text-gray-600 hover:text-[#87ceeb] transition-colors duration-200">
+                {link.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Connect Section -->
+      <div>
+        <h3 class="text-lg font-semibold text-gray-900 mb-4">Connect</h3>
+        <div class="flex flex-wrap gap-3">
+          {socialLinks.map((social) => (
+            <a
+              href={social.href}
+              target={social.href.startsWith('mailto') ? undefined : '_blank'}
+              rel={social.href.startsWith('mailto') ? undefined : 'noopener noreferrer'}
+              class="text-sm text-gray-600 hover:text-[#87ceeb] transition-colors duration-200"
+            >
+              {social.label}
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-8 pt-8 border-t border-gray-200 text-center text-sm text-gray-600">
+      <p>&copy; {currentYear} Michael F. Collins, III. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
