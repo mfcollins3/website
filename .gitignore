@@ -1,5 +1,3 @@
-#!/usr/bin/env pwsh
-
 # Copyright 2026 Michael F. Collins, III
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -20,10 +18,27 @@
 # FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
 # IN THE SOFTWARE.
 
-$ErrorActionPreference = 'Stop'
+# build output
+dist/
+# generated types
+.astro/
 
-# Install Git LFS hooks and pull down any LFS files.
-git lfs install
+# dependencies
+node_modules/
 
-# Install NPM dependencies.
-npm ci
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+
+# environment variables
+.env
+.env.production
+
+# macOS-specific files
+.DS_Store
+
+# jetbrains setting folder
+.idea/

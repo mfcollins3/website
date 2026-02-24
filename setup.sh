@@ -24,3 +24,6 @@ set -e
 
 # Install Git LFS hooks and pull down any LFS files.
 git lfs install
+
+# Install NPM dependencies.
+npm ci

@@ -20,11 +20,16 @@
 
 *               text=auto
 
+*.astro         text eol=lf
+*.ico           binary
 *.json          text eol=lf
 *.md            text eol=lf
+*.mjs           text eol=lf
 *.ps1           text eol=lf
 *.sh            text eol=lf
+*.svg           text eol=lf
 *.toml          text eol=lf
 
 .gitattributes  text eol=lf
+.gitignore      text eol=lf
 .node-version   text eol=lf

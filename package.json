@@ -1,0 +1,47 @@
+{
+  "name": "website",
+  "version": "0.0.1",
+  "description": "This project is my personal website that I used to share technical articles and projects that I am working on.",
+  "keywords": [
+    "blog",
+    "brand",
+    "website"
+  ],
+  "homepage": "https://michaelfcollins3.dev",
+  "bugs": {
+    "email": "mfcollins3@me.com",
+    "url": "https://github.com/mfcollins3/website/issues"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Michael Collins",
+    "email": "mfcollins3@me.com",
+    "url": "https://michaelfcollins3.dev"
+  },
+  "type": "module",
+  "repository": "github:mfcollins3/website",
+  "scripts": {
+    "dev": "astro dev --host 0.0.0.0",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "astro": "^5.17.1"
+  },
+  "engines": {
+    "node": "24.13.1"
+  },
+  "devEngines": {
+    "packageManager": {
+      "name": "npm",
+      "onFail": "warn"
+    },
+    "runtime": {
+      "name": "node",
+      "version": "24.13.1",
+      "onFail": "warn"
+    }
+  },
+  "private": true
+}

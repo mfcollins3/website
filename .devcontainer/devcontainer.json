@@ -14,10 +14,15 @@
     },
     "customizations": {
         "vscode": {
-            "extensions": [],
+            "extensions": [
+                "astro-build.astro-vscode",
+                "DavidAnson.vscode-markdownlint",
+                "tamasfe.even-better-toml"
+            ],
             "settings": {
                 "terminal.integrated.fontFamily": "MesloLGM Nerd Font"
             }
         }
-    }
+    },
+    "postCreateCommand": "bash .devcontainer/scripts/post-create.sh"
 }

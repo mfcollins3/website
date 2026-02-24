@@ -1,4 +1,4 @@
-#!/usr/bin/env pwsh
+#!/usr/bin/env bash
 
 # Copyright 2026 Michael F. Collins, III
 #
@@ -20,10 +20,7 @@
 # FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
 # IN THE SOFTWARE.
 
-$ErrorActionPreference = 'Stop'
+set -e
 
-# Install Git LFS hooks and pull down any LFS files.
-git lfs install
-
-# Install NPM dependencies.
+# Install NPM dependencies
 npm ci
