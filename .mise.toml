@@ -18,13 +18,5 @@
 # FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
 # IN THE SOFTWARE.
 
-*               text=auto
-
-*.json          text eol=lf
-*.md            text eol=lf
-*.ps1           text eol=lf
-*.sh            text eol=lf
-*.toml          text eol=lf
-
-.gitattributes  text eol=lf
-.node-version   text eol=lf
+[settings]
+disable_tools = ["node"]
