@@ -72,6 +72,12 @@ winget install --id Git.Git -e --source winget
 
 ## Git LFS
 
+| Operating System | Required? |
+| ---------------- | --------- |
+| Apple macOS | :white_check_mark: |
+| Linux | :white_check_mark: |
+| Microsoft Windows | :white_check_mark: |
+
 [Git LFS](https://git-ls.com) is an extension for [Git](#git) that enables the storage of large files outside of the Git repository in a large file storage. Certain types of files such as executable code, images, PDFs, documents, and other large files that are not able to be versioned are better served by storing them in LFS instead of in the repository. The reduction in large files keeps the Git repository size low.
 
 - __Apple macOS or Linux__: Git LFS can be installed using [Homebrew](#homebrew). In a terminal, run:
@@ -83,6 +89,12 @@ brew install git-lfs
 - __Microsoft Windows__: Git LFS is installed automatically by [Git for Windows](#git) and does not need to be installed separately.
 
 ## GitHub CLI
+
+| Operating System | Required? |
+| ---------------- | --------- |
+| Apple macOS | :white_check_mark: |
+| Linux | :white_check_mark: |
+| Microsoft Windows | :white_check_mark: |
 
 [GitHub CLI](https://cli.github.com) is a command line interface for [GitHub](https://github.com). GitHub CLI can be used to clone repositories hosted on GitHub, create issues, manage projects, run GitHub Actions workflows, or perform one-off administrative tasks.
 
