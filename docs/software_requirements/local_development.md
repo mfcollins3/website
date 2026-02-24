@@ -2,8 +2,31 @@
 
 This document presents the software requirements for developers who want to use their laptop or desktop computer or a custom virtual machine as a development environment instead of using the development container to build, run, and contribute to the website. The following software packages are required to be installed:
 
+1. [GitHub Copilot CLI](#github-copilot-cli)
 1. [Fast Node Manager](#fast-node-manager)
 1. [Node.js](#nodejs)
+
+## GitHub Copilot CLI
+
+| Operating System | Required? |
+| ---------------- | --------- |
+| Apple macOS | :grey_question: |
+| Linux | :grey_question: |
+| Microsoft Windows | :grey_question: |
+
+[GitHub Copilot CLI](https://github.com/features/copilot/cli/) is a terminal version of GitHub Copilot and can be used to use GitHub Copilot and AI to complete tasks from the terminal, outside of Visual Studio Code.
+
+- __Apple macOS or Linux__: GitHub Copilot CLI can be installed using [Homebrew](required_software.md#homebrew). In a terminal, run:
+
+```shell
+brew install copilot-cli
+```
+
+- __Microsoft Windows__: GitHub Copilot CLI can be installed using [WinGet](https://learn.microsoft.com/en-us/windows/package-manager/winget/). In Windows Terminal, run:
+
+```powershell
+winget install GitHub.Copilot
+```
 
 ## Fast Node Manager
 
