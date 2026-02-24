@@ -3,13 +3,18 @@
     "image": "mcr.microsoft.com/devcontainers/base:2.1.6-bookworm",
     "remoteUser": "vscode",
     "features": {
+        "ghcr.io/devcontainers/features/powershell:2": {},
+        "ghcr.io/iambipinpaul/devcontainer-features/oh-my-posh:1": {},
         "ghcr.io/devcontainers/features/git:1": {},
         "ghcr.io/devcontainers/features/git-lfs:1": {},
         "ghcr.io/devcontainers/features/github-cli:1": {}
     },
     "customizations": {
         "vscode": {
-            "extensions": []
+            "extensions": [],
+            "settings": {
+                "terminal.integrated.fontFamily": "MesloLGM Nerd Font"
+            }
         }
     }
 }

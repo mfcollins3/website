@@ -7,6 +7,7 @@ The following software is required to be installed for developing the website us
 1. [Docker Desktop](#docker-desktop)
 1. [Visual Studio Code](#visual-studio-code)
 1. [Remote Development Extension Pack for Visual Studio Code](#remote-development-extension-pack-for-visual-studio-code)
+1. [Nerd Fonts](#nerd-fonts)
 
 ## Docker Desktop
 
@@ -43,3 +44,27 @@ Visual Studio Code can be downloaded and installed from the [Visual Studio Code 
 [Remote Development Extension Pack for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack) is a pack of Visual Studio Code extensions that support remote development scenarios using Visual Studio Code. The Remote Development extension pack includes support for using SSH to connect to remote machines or for building and running development containers in Visual Studio Code using [Docker Desktop](#docker-desktop).
 
 The Remote Development Extension Pack can be installed from the [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack) or from the Extensions tab in Visual Studio Code.
+
+## Nerd Fonts
+
+| Operating System | Required? |
+| ---------------- | --------- |
+| Apple macOS | :white_check_mark: |
+| Linux | :white_check_mark: |
+| Microsoft Windows | :white_check_mark: |
+
+The development container is configured to use [Oh My Posh](https://ohmyposh.dev) in the Visual Studio Code terminal. Oh My Posh makes use of graphical _nerd fonts_ for icons and symbols in the customized prompt. To view these icons, you will need to install the nerd fonts on your local machine.
+
+- __Apple macOS or Linux__: The nerd fonts can be installed using [Homebrew](required_software.md#homebrew). In a terminal, run:
+
+```shell
+brew install --cask font-meslo-lg-nerd-font
+```
+
+- __PowerShell users or Microsoft Windows__: The nerd fonts can be installed using [PowerShell](required_software.md#powershell). In a terminal, run:
+
+```powershell
+Install-PSResource -Name NerdFonts
+Import-Module -Name NerdFonts
+Install-NerdFont -Name 'Meslo'
+```
