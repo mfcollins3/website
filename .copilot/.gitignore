@@ -1,5 +1,3 @@
-#!/usr/bin/env bash
-
 # Copyright 2026 Michael F. Collins, III
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -20,19 +18,5 @@
 # FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
 # IN THE SOFTWARE.
 
-set -e
-
-# Install NPM dependencies
-npm ci
-
-# Configure the directory where GitHub Copilot CLI looks for configuration
-# settings.
-GH_CLI_CONFIG_DIR="/workspaces/website"
-
-if ! grep -q 'export XDG_CONFIG_HOME=' ~/.bashrc; then
-    echo "export XDG_CONFIG_HOME=\"$GH_CLI_CONFIG_DIR\"" >> ~/.bashrc
-fi
-
-if ! grep -q 'export XDG_CONFIG_HOME=' ~/.zshrc; then
-    echo "export XDG_CONFIG_HOME=\"$GH_CLI_CONFIG_DIR\"" >> ~/.zshrc
-fi
+logs/
+config.json
