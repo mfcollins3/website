@@ -1,9 +1,14 @@
 ---
 import BaseLayout from '../../../../../layouts/BaseLayout.astro';
+import { Image } from 'astro:assets';
 import { getCollection, render } from 'astro:content';
+import dayjs from "dayjs";
+import utc from "dayjs/plugin/utc";
+
+dayjs.extend(utc);
 
 export async function getStaticPaths() {
-  const posts = await getCollection('blog');
+  const posts = await getCollection('blog', (post) => import.meta.env.PROD ? !post.data.draft : true);
   return posts.map((post) => {
     const parts = post.id.split('/');
     const year = parts[0];
@@ -17,13 +22,17 @@ export async function getStaticPaths() {
 }
 
 const { post } = Astro.props;
-const { Content } = await render(post);
+const { Content, remarkPluginFrontmatter } = await render(post);
 
 const formattedDate = post.data.publishedDate.toLocaleDateString('en-US', {
   year: 'numeric',
   month: 'long',
   day: 'numeric',
 });
+const lastModified = dayjs(remarkPluginFrontmatter.lastModified)
+  .utc()
+  .tz("America/Phoenix")
+  .format('MMMM DD, YYYY hh:mm A Z');
 ---
 
 <BaseLayout
@@ -43,7 +52,7 @@ const formattedDate = post.data.publishedDate.toLocaleDateString('en-US', {
         <!-- Featured Image -->
         {post.data.featuredImage && (
           <div class="relative h-96 overflow-hidden">
-            <img
+            <Image
               src={post.data.featuredImage}
               alt={post.data.title}
               class="w-full h-full object-cover"
@@ -59,7 +68,7 @@ const formattedDate = post.data.publishedDate.toLocaleDateString('en-US', {
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
               </svg>
-              {post.data.readTime} min read
+              {remarkPluginFrontmatter.minutesRead}
             </span>
           </div>
 
@@ -71,13 +80,17 @@ const formattedDate = post.data.publishedDate.toLocaleDateString('en-US', {
             {post.data.excerpt}
           </p>
 
-          <div class="prose prose-lg max-w-none text-gray-700 leading-relaxed mb-8
+          <div class="prose max-w-none text-gray-700 leading-relaxed mb-8
             prose-headings:text-gray-900 prose-a:text-[#87ceeb]
             prose-code:bg-gray-100 prose-code:px-1 prose-code:rounded
             prose-pre:bg-gray-900 prose-pre:text-gray-100 prose-pre:leading-[1.2]
             [&_pre_code]:bg-transparent [&_pre_code]:p-0 [&_pre_code]:rounded-none [&_pre_code]:leading-[1.2]">
             <Content />
           </div>
+
+            <p class="text-sm text-gray-500">
+              Last modified: {lastModified}
+            </p>
 
           <!-- Tags -->
           {post.data.tags.length > 0 && (

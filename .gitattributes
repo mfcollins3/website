@@ -17,12 +17,13 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
 # FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
 # IN THE SOFTWARE.
-
 *               text=auto
 
 *.astro         text eol=lf
 *.css           text eol=lf
 *.ico           binary
+*.jpg           filter=lfs diff=lfs merge=lfs -text
+*.js            text eol=lf
 *.json          text eol=lf
 *.md            text eol=lf
 *.mjs           text eol=lf

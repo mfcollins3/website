@@ -17,6 +17,22 @@ const {
 <!doctype html>
 <html lang="en">
   <head>
+    <script type="text/javascript">
+      var _iub = _iub || [];
+      _iub.csConfiguration = {"siteId":3855737,"cookiePolicyId":37453753,"storage":{"useSiteId":true}};
+      _iub.csLangConfiguration = {"en":{"cookiePolicyId":37453753}};
+    </script>
+    <script type="text/javascript" src="https://cs.iubenda.com/autoblocking/3855737.js"></script>
+    <script type="text/javascript" src="//cdn.iubenda.com/cs/gpp/stub.js"></script>
+    <script type="text/javascript" src="//cdn.iubenda.com/cs/iubenda_cs.js" charset="UTF-8" async></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NDGMMHLHNR"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-NDGMMHLHNR');
+    </script>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" href="/favicon.ico" />
@@ -27,6 +43,8 @@ const {
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
     <title>{title}</title>
+    <link rel="alternate" type="application/rss+xml" title="Michael F. Collins, III's Blog" href={new URL("blog/rss.xml", Astro.site)} />
+    <script src="https://kit.fontawesome.com/4be596d099.js" crossorigin="anonymous"></script>
   </head>
   <body class="flex flex-col min-h-screen bg-gray-50">
     <Navigation />

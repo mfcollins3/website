@@ -13,7 +13,9 @@ const featuredCategory = 'Software Architecture';
 const categoryPosts = sortedPosts
   .filter((post) => post.data.categories.includes(featuredCategory))
   .slice(0, 5);
-const recentPosts = sortedPosts.slice(0, 6);
+const recentPosts = sortedPosts
+  .filter((post) => post.id !== featuredPost?.id)
+  .slice(0, 6);
 ---
 
 <BaseLayout title="Michael F. Collins, III - Software Developer & Architect">
@@ -61,6 +63,7 @@ const recentPosts = sortedPosts.slice(0, 6);
   )}
 
   <!-- Recent Posts -->
+  {recentPosts.length > 0 && (
   <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
     <div class="flex justify-between items-center mb-8">
       <h2 class="text-3xl font-bold text-gray-900">Recent Articles</h2>
@@ -77,4 +80,5 @@ const recentPosts = sortedPosts.slice(0, 6);
       ))}
     </div>
   </section>
+  )}
 </BaseLayout>

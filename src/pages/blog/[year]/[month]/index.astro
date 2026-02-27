@@ -4,7 +4,7 @@ import BlogPostCard from '../../../../components/BlogPostCard.astro';
 import { getCollection } from 'astro:content';
 
 export async function getStaticPaths() {
-  const allPosts = await getCollection('blog');
+  const allPosts = await getCollection('blog', (post) => import.meta.env.PROD ? !post.data.draft : true);
   const yearMonths = [...new Set(
     allPosts.map((p) => {
       const d = p.data.publishedDate;
@@ -21,7 +21,7 @@ const { year, month } = Astro.params;
 const yearNumber = Number(year);
 const monthNumber = Number(month) - 1; // 0-indexed
 
-const allPosts = await getCollection('blog');
+const allPosts = await getCollection('blog', (post) => import.meta.env.PROD ? !post.data.draft : true);
 const monthPosts = allPosts
   .filter((p) => {
     const d = p.data.publishedDate;

@@ -1,5 +1,6 @@
 ---
 import type { CollectionEntry } from 'astro:content';
+import FeaturedImage from './FeaturedImage.astro';
 
 interface Props {
   post: CollectionEntry<'blog'>;
@@ -23,23 +24,15 @@ const postUrl = `/blog/${post.id}`;
       <div class="grid md:grid-cols-2 gap-0">
         {post.data.featuredImage && (
           <div class="relative h-64 md:h-auto overflow-hidden">
-            <img
+            <FeaturedImage
               src={post.data.featuredImage}
               alt={post.data.title}
-              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-              loading="lazy"
             />
           </div>
         )}
         <div class="p-6 md:p-8 flex flex-col justify-center">
           <div class="flex items-center gap-4 text-sm text-gray-600 mb-3">
             <span>{formattedDate}</span>
-            <span class="flex items-center gap-1">
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
-              </svg>
-              {post.data.readTime} min read
-            </span>
           </div>
           <h2 class="text-3xl font-bold text-gray-900 mb-4 group-hover:text-[#87ceeb] transition-colors duration-200">
             {post.data.title}
@@ -61,23 +54,15 @@ const postUrl = `/blog/${post.id}`;
     <article class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300 h-full flex flex-col">
       {post.data.featuredImage && (
         <div class="relative h-48 overflow-hidden">
-          <img
+          <FeaturedImage
             src={post.data.featuredImage}
             alt={post.data.title}
-            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-            loading="lazy"
           />
         </div>
       )}
       <div class="p-6 flex flex-col flex-grow">
         <div class="flex items-center gap-4 text-sm text-gray-600 mb-3">
           <span>{formattedDate}</span>
-          <span class="flex items-center gap-1">
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-              <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
-            </svg>
-            {post.data.readTime} min read
-          </span>
         </div>
         <h3 class="text-xl font-semibold text-gray-900 mb-3 group-hover:text-[#87ceeb] transition-colors duration-200">
           {post.data.title}

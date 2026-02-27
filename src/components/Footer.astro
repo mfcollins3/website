@@ -1,16 +1,15 @@
 ---
-const currentYear = new Date().getFullYear();
-
 const socialLinks = [
-  { label: 'Email', href: 'mailto:mfcollins3@me.com' },
-  { label: 'GitHub', href: 'https://github.com/mfcollins3' },
-  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/michaelfcollins3/' },
-  { label: 'YouTube', href: 'https://www.youtube.com/@mfcollins3' },
-  { label: 'Facebook', href: 'https://www.facebook.com/mfcollins3' },
-  { label: 'X', href: 'https://x.com/mfcollins3' },
-  { label: 'Instagram', href: 'https://www.instagram.com/mfcollins3/' },
-  { label: 'Threads', href: 'https://www.threads.com/@mfcollins3' },
-  { label: 'Bluesky', href: 'https://bsky.app/profile/mfcollins3.bsky.social' },
+  { label: 'Email', href: 'mailto:mfcollins3@me.com', classes: 'fa-regular fa-envelope' },
+  { label: 'GitHub', href: 'https://github.com/mfcollins3', classes: 'fa-brands fa-github' },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/michaelfcollins3/', classes: 'fa-brands fa-linkedin' },
+  { label: 'YouTube', href: 'https://www.youtube.com/@mfcollins3', classes: 'fa-brands fa-youtube' },
+  { label: 'Medium', href: 'https://medium.com/@mfcollins3', classes: 'fa-brands fa-medium' },
+  { label: 'Facebook', href: 'https://www.facebook.com/mfcollins3', classes: 'fa-brands fa-facebook' },
+  { label: 'X', href: 'https://x.com/mfcollins3', classes: 'fa-brands fa-x-twitter' },
+  { label: 'Instagram', href: 'https://www.instagram.com/mfcollins3/', classes: 'fa-brands fa-instagram' },
+  { label: 'Threads', href: 'https://www.threads.com/@mfcollins3', classes: 'fa-brands fa-threads' },
+  { label: 'Bluesky', href: 'https://bsky.app/profile/mfcollins3.bsky.social', classes: 'fa-brands fa-bluesky' },
 ];
 ---
 
@@ -23,6 +22,18 @@ const socialLinks = [
         <p class="text-gray-600 text-sm">
           Software developer and architect with over 30 years of professional experience,
           sharing insights on software development and computer science.
+        </p>
+        <p class="text-gray-600 text-sm mt-2">
+          The opinions expressed on this site are my own and do not necessarily 
+          reflect the views of my employer or any other organization.
+        </p>
+        <p class="text-gray-600 text-sm mt-2">
+          <a href="https://www.iubenda.com/privacy-policy/37453753" class="iubenda-white no-brand iubenda-noiframe iubenda-embed" title="Privacy Policy ">Privacy Policy</a>
+          <script type="text/javascript">(function (w,d) {var loader = function () {var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0]; s.src="https://cdn.iubenda.com/iubenda.js"; tag.parentNode.insertBefore(s,tag);}; if(w.addEventListener){w.addEventListener("load", loader, false);}else if(w.attachEvent){w.attachEvent("onload", loader);}else{w.onload = loader;}})(window, document);</script>
+        </p>
+        <p>
+          <a href="https://www.iubenda.com/privacy-policy/37453753/cookie-policy" class="iubenda-white no-brand iubenda-noiframe iubenda-embed" title="Cookie Policy ">Cookie Policy</a>
+          <script type="text/javascript">(function (w,d) {var loader = function () {var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0]; s.src="https://cdn.iubenda.com/iubenda.js"; tag.parentNode.insertBefore(s,tag);}; if(w.addEventListener){w.addEventListener("load", loader, false);}else if(w.attachEvent){w.attachEvent("onload", loader);}else{w.onload = loader;}})(window, document);</script>
         </p>
       </div>
 
@@ -50,22 +61,30 @@ const socialLinks = [
       <div>
         <h3 class="text-lg font-semibold text-gray-900 mb-4">Connect</h3>
         <div class="flex flex-wrap gap-3">
-          {socialLinks.map((social) => (
-            <a
-              href={social.href}
-              target={social.href.startsWith('mailto') ? undefined : '_blank'}
-              rel={social.href.startsWith('mailto') ? undefined : 'noopener noreferrer'}
-              class="text-sm text-gray-600 hover:text-[#87ceeb] transition-colors duration-200"
-            >
-              {social.label}
-            </a>
-          ))}
+          <ul class="fa-ul">
+            {socialLinks.map((social) => (
+              <li>
+                <span class="fa-li"><i class={social.classes}></i></span>
+                <a
+                  href={social.href}
+                  target={social.href.startsWith('mailto') ? undefined : '_blank'}
+                  rel={social.href.startsWith('mailto') ? undefined : 'noopener noreferrer'}
+                >
+                  {social.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+
         </div>
       </div>
     </div>
 
     <div class="mt-8 pt-8 border-t border-gray-200 text-center text-sm text-gray-600">
-      <p>&copy; {currentYear} Michael F. Collins, III. All rights reserved.</p>
+      <p>Copyright 2026 Michael F. Collins, III. <a href="/license">License Terms</a></p>
     </div>
   </div>
 </footer>
