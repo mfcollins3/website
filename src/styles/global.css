@@ -1,10 +1,13 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
 @custom-variant dark (&:is(.dark *));
 
 :root {
   --font-size: 16px;
   --font-family: 'Inter', sans-serif;
+  --font-family-mono: 'Source Code Pro', monospace;
+  --font-size-mono: 0.8rem;
   --background: #ffffff;
   --foreground: #1f2937;
   --card: #ffffff;
@@ -37,6 +40,7 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+  --font-mono: var(--font-family-mono);
 }
 
 @layer base {
@@ -52,5 +56,10 @@
 
   html {
     font-size: var(--font-size);
+  }
+
+  pre, code, kbd, samp {
+    font-family: var(--font-family-mono);
+    font-size: var(--font-size-mono);
   }
 }
