@@ -5,9 +5,8 @@ excerpt: |
     Welcome! I'm happy to have you here. In this post, I will introduce myself
     to you and let you know what you should expect to find on my website in the
     coming days, weeks, (and hopefully years).
-publishedDate: 2026-02-26
+publishedDate: 2026-02-28
 isFeatured: true
-draft: true
 ---
 I'm nothing if not persistent. I have rewritten this same article so many times that I have lost count. But here I am starting yet another incarnation of my blog and personal website and writing the article once again. When I die, my eulogy will probably be titled "My Ice Breaker" to introduce myself to those in any afterlife, if there is one. So, once again, welcome!
 
