@@ -1,0 +1,17 @@
+{
+  "universe_usage_history": [
+    {
+      "universe": "Firefly",
+      "assigned_at": "2026-04-26",
+      "assignment_id": "init-2026-04-26"
+    }
+  ],
+  "assignment_cast_snapshots": {
+    "init-2026-04-26": {
+      "universe": "Firefly",
+      "assigned_at": "2026-04-26",
+      "members": ["Mal", "Kaylee", "Book", "Wash"],
+      "exempt": ["Scribe", "Ralph"]
+    }
+  }
+}

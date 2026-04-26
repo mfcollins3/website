@@ -1,0 +1,52 @@
+{
+  "agents": {
+    "mal": {
+      "persistent_name": "Mal",
+      "role": "Lead",
+      "universe": "Firefly",
+      "created_at": "2026-04-26",
+      "legacy_named": false,
+      "status": "active"
+    },
+    "kaylee": {
+      "persistent_name": "Kaylee",
+      "role": "Frontend Dev",
+      "universe": "Firefly",
+      "created_at": "2026-04-26",
+      "legacy_named": false,
+      "status": "active"
+    },
+    "book": {
+      "persistent_name": "Book",
+      "role": "Content/DevRel",
+      "universe": "Firefly",
+      "created_at": "2026-04-26",
+      "legacy_named": false,
+      "status": "active"
+    },
+    "wash": {
+      "persistent_name": "Wash",
+      "role": "DevOps",
+      "universe": "Firefly",
+      "created_at": "2026-04-26",
+      "legacy_named": false,
+      "status": "active"
+    },
+    "scribe": {
+      "persistent_name": "Scribe",
+      "role": "Session Logger",
+      "universe": "exempt",
+      "created_at": "2026-04-26",
+      "legacy_named": false,
+      "status": "active"
+    },
+    "ralph": {
+      "persistent_name": "Ralph",
+      "role": "Work Monitor",
+      "universe": "exempt",
+      "created_at": "2026-04-26",
+      "legacy_named": false,
+      "status": "active"
+    }
+  }
+}

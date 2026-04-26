@@ -1,5 +1,17 @@
-*                   text=auto
+*                           text=auto
 
-*.md                text eol=lf
+*.examples                  text eol=lf
+*.js                        text eol=lf
+*.json                      text eol=lf
+*.md                        text eol=lf
+*.template                  text eol=lf
+*.yml                       text eol=lf
 
-.gitattributes      text eol=lf
+.first-run                  text eol=lf
+.gitattributes              text eol=lf
+
+# Squad: union merge for append-only team state files
+.squad/decisions.md         merge=union
+.squad/agents/*/history.md  merge=union
+.squad/log/**               merge=union
+.squad/orchestration-log/** merge=union
