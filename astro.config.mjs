@@ -26,6 +26,7 @@ import webhookNotifier from "@emdash-cms/plugin-webhook-notifier";
 import { defineConfig, fontProviders } from "astro/config";
 import emdash from "emdash/astro";
 import { cloudflareEmail } from "@emdash-cms/cloudflare/plugins";
+import iubenda from "astro-iubenda";
 
 export default defineConfig({
 	output: "server",
@@ -58,6 +59,15 @@ export default defineConfig({
 			sandboxRunner: sandbox(),
 			marketplace: "https://marketplace.emdashcms.com",
 		}),
+		iubenda({
+			documentIds: [3855737],
+			cookieFooter: {
+				iubendaOptions: {
+					siteId: 3855737,
+					cookiePolicyId: 37453753,
+				},
+			}
+		})
 	],
 	fonts: [
 		{
