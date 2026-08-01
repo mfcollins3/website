@@ -27,9 +27,11 @@ import { defineConfig, fontProviders } from "astro/config";
 import emdash from "emdash/astro";
 import { cloudflareEmail } from "@emdash-cms/cloudflare/plugins";
 import iubenda from "astro-iubenda";
+import astroLlmsTxt from "@4hse/astro-llms-txt";
 
 export default defineConfig({
 	output: "server",
+	site: "https://michaelfcollins3.dev",
 	adapter: cloudflare(),
 	image: {
 		layout: "constrained",
@@ -67,7 +69,25 @@ export default defineConfig({
 					cookiePolicyId: 37453753,
 				},
 			}
-		})
+		}),
+		astroLlmsTxt({
+			title: "Michael F. Collins, III",
+			description: "Blog about software development, technology, and other topics of interest by Michael F. Collins, III",
+			docSet: [
+				{
+					title: "Complete site",
+					description: "The full website of Michael F. Collins, III",
+					url: "/llms-full.txt",
+				},
+				{
+					title: "Small site",
+					description: "Index of key pages",
+					url: "/llms-small.txt",
+					onlyStructure: true,
+				},
+			],
+			pageSeparator: "\n\n---\n\n",
+		}),
 	],
 	fonts: [
 		{

@@ -15,6 +15,7 @@
     "typecheck": "astro check"
   },
   "dependencies": {
+    "@4hse/astro-llms-txt": "^1.0.5",
     "@astrojs/cloudflare": "^14.0.0",
     "@astrojs/react": "^6.0.0",
     "@emdash-cms/cloudflare": "^0.30.0",
