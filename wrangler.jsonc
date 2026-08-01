@@ -1,19 +1,29 @@
 {
 	"$schema": "node_modules/wrangler/config-schema.json",
-	"name": "my-emdash-site",
+	"name": "michaelfcollins3-dev",
 	"main": "./src/worker.ts",
 	"compatibility_date": "2026-02-24",
-	"compatibility_flags": ["nodejs_compat"],
+	"compatibility_flags": [
+		"nodejs_compat"
+	],
 	"d1_databases": [
 		{
 			"binding": "DB",
-			"database_name": "my-emdash-site",
+			"database_name": "michaelfcollins3-dev",
+			"migrations_dir": "../../migrations",
+			"database_id": "5ce1636a-27c7-44fd-97b3-fbe3b43b13f0",
 		},
 	],
 	"r2_buckets": [
 		{
 			"binding": "MEDIA",
-			"bucket_name": "my-emdash-media",
+			"bucket_name": "michaelfcollins3-dev-media",
+		},
+	],
+	"kv_namespaces": [
+		{
+			"binding": "CACHE",
+			"id": "283db271d81143c597630bb08d23cd18",
 		},
 	],
 	// Worker Loader for plugin sandboxing
@@ -24,6 +34,8 @@
 	],
 	// Drives scheduled publishing, plugin cron, and maintenance (see src/worker.ts)
 	"triggers": {
-		"crons": ["* * * * *"],
+		"crons": [
+			"* * * * *"
+		],
 	},
 }
