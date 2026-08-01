@@ -25,6 +25,7 @@ import { formsPlugin } from "@emdash-cms/plugin-forms";
 import webhookNotifier from "@emdash-cms/plugin-webhook-notifier";
 import { defineConfig, fontProviders } from "astro/config";
 import emdash from "emdash/astro";
+import { cloudflareEmail } from "@emdash-cms/cloudflare/plugins";
 
 export default defineConfig({
 	output: "server",
@@ -37,9 +38,22 @@ export default defineConfig({
 		react(),
 		emdash({
 			database: d1({ binding: "DB", session: "auto" }),
-			storage: r2({ binding: "MEDIA" }),
+			storage: r2({ 
+				binding: "MEDIA",
+				publicUrl: "https://media.michaelfcollins3.dev",
+			}),
 			objectCache: kvCache({ binding: "CACHE"}),
-			plugins: [formsPlugin()],
+			plugins: [
+				formsPlugin(),
+				cloudflareEmail({
+					from: {
+						email: "no-reply@michaelfcollins3.dev",
+						name: "michaelfcollins3.dev",
+					},
+					replyTo: "mfcollins3@me.com",
+					binding: "EMAIL",
+				}),
+			],
 			sandboxed: [webhookNotifier],
 			sandboxRunner: sandbox(),
 			marketplace: "https://marketplace.emdashcms.com",
