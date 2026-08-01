@@ -18,6 +18,7 @@
     "@4hse/astro-llms-txt": "^1.0.5",
     "@astrojs/cloudflare": "^14.0.0",
     "@astrojs/react": "^6.0.0",
+    "@astrojs/sitemap": "^3.7.3",
     "@emdash-cms/cloudflare": "^0.30.0",
     "@emdash-cms/plugin-forms": "^0.2.4",
     "@emdash-cms/plugin-webhook-notifier": "^0.2.0",

@@ -28,6 +28,7 @@ import emdash from "emdash/astro";
 import { cloudflareEmail } from "@emdash-cms/cloudflare/plugins";
 import iubenda from "astro-iubenda";
 import astroLlmsTxt from "@4hse/astro-llms-txt";
+import sitemap from "@astrojs/sitemap";
 
 export default defineConfig({
 	output: "server",
@@ -39,6 +40,7 @@ export default defineConfig({
 	},
 	integrations: [
 		react(),
+		sitemap(),
 		emdash({
 			database: d1({ binding: "DB", session: "auto" }),
 			storage: r2({ 
